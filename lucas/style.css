@@ -1,0 +1,14 @@
+body{
+    background-color: #e1dddd;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-table{
+    background-color: brown;
+    border-radius: 10px;
+    padding: 20px;
+}
+
