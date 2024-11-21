@@ -1,0 +1,108 @@
+body {
+    display: flex; /* Usando flexbox */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    height: 100vh; /* Define a altura do body para 100% da altura da viewport */
+    margin: 0; /* Remove margens padrão */
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f2f2f2;
+}
+
+.cardImage{
+    width: 100px;
+    height: auto;
+}
+
+.content {
+    display: flex; /* Ativa o flexbox */
+    flex-direction: column; /* Alinha os itens na coluna */
+    align-items: center; /* Centraliza horizontalmente os itens */
+    justify-content: center; /* Centraliza verticalmente os itens */
+    background-color: rgb(55, 55, 55);
+    border-radius: 10px;
+    padding: 20px;
+    width: 250px; /* Você pode ajustar a largura conforme necessário */
+    color: #f2f2f2;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+    transition: transform 0.8s ease;
+    margin-top: 250px;
+}
+
+.content:hover{
+    transform: scale(1.05);
+}
+
+label{
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 3px;
+    transition: transform 0.8s ease;
+}
+
+label:hover{
+    transform: scale(1.01);
+}
+
+input{
+    width: 100%;
+    border-radius: 3px;
+    border: 0px;
+    transition: transform 0.8s ease;
+    transition: background-color 0.7s ease;
+    color: #000000;
+}
+
+input:hover{
+    transform: scale(1.02);
+    background-color: rgb(38, 40, 39);
+    color: #f2f2f2;
+    animation: color 0.5s forwards;
+}
+
+header {
+    position: fixed; /* Torna o cabeçalho fixo */
+    top: 0; /* Alinha o cabeçalho ao topo da página */
+    left: 0; /* Alinha o cabeçalho à esquerda da página */
+    right: 0; /* Alinha o cabeçalho à direita da página */
+    background-color: black; /* Cor de fundo */
+    color: #ffffff; /* Cor do texto */
+    padding: 20px; /* Espaçamento interno */
+    text-align: center; /* Centraliza o texto */
+    z-index: 1000; /* Garante que o cabeçalho fique acima de outros elementos */
+}
+
+button{
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid;
+    margin-top: 20px;
+    width: 100px;
+    height: auto;
+    margin-left: 65px;
+    font-size: 20px;
+    background-color: brown;
+    transition: background-color 1.1s ease;
+    transition: transform 0.8s ease;
+}
+
+button:hover{
+    transform: scale(1.07);
+    background-color: green;
+    cursor: pointer;
+}
+
+.dadosSalvos{
+    margin-top: -55px;
+    margin-left: 20px;
+}
+
+#desc {
+    opacity: 0.7;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    color: #ffffff;
+    letter-spacing: 2px; /* Adiciona espaço entre as letras */
+    overflow: hidden; /* Oculta o texto que está fora do contêiner */
+    border-right: 2px solid; /* Simula o cursor de digitação */
+  
+}
