@@ -60,6 +60,7 @@ input:hover{
 }
 
 header {
+    font-size: 15px;
     position: fixed; /* Torna o cabeçalho fixo */
     top: 0; /* Alinha o cabeçalho ao topo da página */
     left: 0; /* Alinha o cabeçalho à esquerda da página */
@@ -99,10 +100,11 @@ button:hover{
 #desc {
     opacity: 0.7;
     font-family: Arial, sans-serif;
-    font-size: 20px;
+    font-size: 15px;
     color: #ffffff;
     letter-spacing: 2px; /* Adiciona espaço entre as letras */
     overflow: hidden; /* Oculta o texto que está fora do contêiner */
     border-right: 2px solid; /* Simula o cursor de digitação */
   
 }
+
