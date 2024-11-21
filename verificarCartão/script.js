@@ -34,6 +34,6 @@ document.getElementById('imagemAni').addEventListener('click', function() {
 
     }else{
         alert('Preencha todos os dados.')
-    }
+    };
     
 });
