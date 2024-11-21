@@ -1,5 +1,6 @@
 let isMoved = false; // Variável de controle
 
+
 document.getElementById('imagemAni').addEventListener('click', function() {
     const cardName = document.getElementById('cardNameId').value
     const cardNumber = document.getElementById('cardNumberId').value
@@ -18,6 +19,18 @@ document.getElementById('imagemAni').addEventListener('click', function() {
         const desc = document.getElementById('desc');
         desc.innerText = 'Seus dados foram salvos com sucesso!'
 
+        const cardsSaved = document.querySelector('.cardsSaved');
+        const h1 = document.createElement('h1');
+        h1.classList.add('h1');
+        h1.innerHTML += `
+        <p>Nome no Cartão: ${cardName}</p>
+        <p>Número do Cartão: ${cardNumber}</p>
+        <p>Data de Validade: ${cardDate}</p>
+        <p>Código CVV: ${cardCvv}</p> 
+        
+        `;
+
+        cardsSaved.append(h1)
 
     }else{
         alert('Preencha todos os dados.')
