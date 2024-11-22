@@ -1,6 +1,3 @@
-let isMoved = false; // Variável de controle
-
-
 document.getElementById('imagemAni').addEventListener('click', function() {
     const cardName = document.getElementById('cardNameId').value
     const cardNumber = document.getElementById('cardNumberId').value
