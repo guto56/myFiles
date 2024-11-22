@@ -3,29 +3,31 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     background-repeat: no-repeat;
     background-size: cover;
-    margin-bottom: 100%;
+    margin: 0; /* Remover a margem inferior */
+    padding: 0; /* Remover o padding padrão */
+    margin-bottom: 500px;
+}
+
+.addContent {
+    text-align: center; /* Centraliza o botão */
+    margin: 20px 0; /* Margem em cima e embaixo */
 }
 
 .content {
-    display: block; /* Ativa o flexbox */
-}
-
-#pasta1{
-    margin-top: 40px;
+    display: flex; /* Ativa o flexbox */
+    flex-direction: column; /* Alinha os itens em coluna */
+    align-items: center; /* Centraliza horizontalmente */
 }
 
 .pasta {
-    display: block;
-    background-color: #0e9ddf53;
-    border-radius: 10px;
-    width: auto; /* Ajusta a largura automaticamente */
-    margin-top: 10px;
-    padding: 10px;
     display: flex; /* Ativa o flexbox dentro do .pasta */
     align-items: center; /* Alinha a imagem e o texto verticalmente ao centro */
-    margin-right: 800px;
-    margin-top: 15px;
-    margin-left: 25px;
+    background-color: rgba(14, 157, 223, 0.32); /* Cor de fundo com transparência */
+    border-radius: 10px;
+    width: 90%; /* Ajusta a largura para 90% da tela */
+    max-width: 600px; /* Define uma largura máxima */
+    margin: 10px 0; /* Margem vertical */
+    padding: 10px;
 }
 
 img {
@@ -33,33 +35,66 @@ img {
     margin-right: 10px; /* Espaçamento entre a imagem e o texto */
 }
 
-#desc{
-    margin-left: 40px;
+#desc {
+    margin-left: 55px; /* Ajusta a margem esquerda */
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 13px;
-    background-color: #0e9ddf38;
+    background-color: rgba(14, 157, 223, 0.22); /* Cor de fundo com transparência */
     padding: 10px;
     border-radius: 10px;
+    margin-right: 20%;
 }
 
-button {
+.btn {
     border: 1px solid;
     border-radius: 5px;
     text-align: center;
     transition: transform 1.1s ease;
-    width: 90px; /* Defina uma largura específica para o botão */
+    width: 90px; /* Largura do botão */
     height: auto;
     margin: 20px auto; /* Centraliza o botão */
-    margin-left: 550px;
 }
 
-button:hover{
+.btn:hover {
     background-color: #9f9e9e;
     cursor: pointer;
     transform: scale(1.2);
 }
 
-a{
+a {
     color: rgb(200, 228, 252);
     margin-right: 20px;
+    text-decoration: none; /* Remove o sublinhado do link */
+}
+
+#removeBtn{
+    border: 1px solid;
+    border-radius: 3px;
+    background-color: rgb(200, 228, 252);
+    padding: 10px;
+    transition: background-color 0.7s ease;
+}
+
+#removeBtn:hover{
+    cursor: pointer;
+    background-color: rgba(255, 0, 0, 0.491);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .pasta {
+        width: 95%; /* Largura maior em telas menores */
+    }
+
+    button {
+        width: 80%; /* Botão ocupa mais espaço em telas menores */
+    }
+
+    img {
+        max-width: 30px; /* Reduz a largura da imagem em telas menores */
+    }
+
+    #desc {
+        font-size: 12px; /* Reduz o tamanho da fonte em telas menores */
+    }
 }
