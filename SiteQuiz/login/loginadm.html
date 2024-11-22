@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="stylesheet" href="loginadm.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Administrativo</title>
+</head>
+<body>
+
+    <div id="loading" class="loading-overlay"></div>
+        <div class="loader"></div>
+    </div>
+    
+    <div class="login-container">
+        <h1>Login Administrativo</h1>
+        <form id="login-form">
+            <label for="admin-username">Usuário:</label>
+            <input type="text" id="admin-username" required>
+            <label for="admin-password">Senha:</label>
+            <input type="password" id="admin-password" required>
+            <button type="submit" class="btn">Entrar</button>
+            <button id="leaveBtn" type="button" class="btn">Sair</button>
+        </form>
+        <div id="message"></div>
+    </div>
+    <script src="loginadm.js"></script>
+</body>
+</html>

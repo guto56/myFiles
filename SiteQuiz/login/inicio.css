@@ -1,0 +1,181 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.logo {
+    width: 150px; /* Largura desejada */
+    height: auto; /* Mantém a proporção original */
+}
+
+h1{
+    margin-left: 145px;
+    margin-top: -135px;
+    font-family: "Nerko One", cursive;
+}
+
+h2{
+    margin-left: 175px;
+    margin-top: -30px;
+    font-family: "Handjet", sans-serif;
+}
+
+hr{
+    margin-top: 90px;
+    margin-left: 10px;
+    margin-right: -10px;
+}
+
+.menu {
+    background-color: #6905;
+    position: absolute; /* Faz com que o elemento use posição absoluta */
+    top: 0; /* Alinha o topo ao início da página */
+    left: 0; /* Alinha a esquerda ao início da página */
+    right: 0; /* Alinha a direita ao final da página */
+    bottom: calc(560px + 1px); /* Define a parte inferior do contêiner, deixando espaço para o <hr> */
+    padding: 10px; /* Adiciona padding, se necessário */
+    box-sizing: border-box;
+}
+
+.quiztitle {
+    display: flex; /* Ativa o flexbox */
+    justify-content: center; /* Centraliza horizontalmente o conteúdo */
+    padding: 20px 0; /* Adiciona algum espaço acima e abaixo da imagem */
+}
+
+.quizimg {
+    width: 370px; /* Define a largura da imagem */
+    height: auto; /* Mantém a proporção da imagem */
+    margin-top: 50px;
+}
+
+.container {
+
+    max-width: 350px;
+    height: auto;
+    font-family: "Bebas Neue", sans-serif;
+    display: flex; /* Ativa o Flexbox */
+    justify-content: space-between; /* Distribui espaço igualmente entre as caixas */
+    padding: 20px; /* Adiciona algum espaço ao redor das caixas */
+    gap: 10px; /* Espaço entre as caixas */
+    box-sizing: border-box; /* Inclui padding e bordas na largura e altura total */
+}
+
+.box {
+    border-radius: 15px;
+    flex: 1; /* Faz com que as caixas cresçam igualmente para ocupar o espaço disponível */
+    background-color: #6905; /* Cor de fundo para as caixas */
+    border: 1px solid #ddd; /* Borda ao redor das caixas */
+    padding: 20px; /* Espaço interno das caixas */
+    margin: 0; /* Remove margem adicional */
+    text-align: center; /* Alinha o texto ao centro */
+    box-sizing: border-box; /* Inclui padding e bordas na largura e altura total */
+}
+
+.box h1, .box p {
+    margin: 0; /* Remove margens padrão dos elementos */
+    padding: 0; /* Remove padding padrão dos elementos */
+}
+
+.h1box{
+    font-family: "Bebas Neue", sans-serif;
+}
+
+.instagram-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #c13584; /* Cor do Instagram */
+    border: none;
+    border-radius: 5px;
+    text-decoration: none; /* Remove o sublinhado padrão do link */
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.instagram-button:hover {
+    background-color: #e1306c; /* Cor do Instagram ao passar o mouse */
+}
+
+.quiztelapng{
+    width: 300px;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    margin-right: 30px;
+    margin-left: 30px;
+    padding: 10px 20px;
+    border-radius: 75px;
+}
+
+#imgexemplo{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+#desc{
+    margin-bottom: 30px;
+    margin-top: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#startbtn{
+    font-family: "Nerko One", cursive;
+    font-size: 25px;
+}
+
+/* loading.css */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.3s ease;
+}
+
+.loading-overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.loader {
+    height: 3px;
+    width: 60px;
+    background: linear-gradient(#000 0 0) right/51% 100% no-repeat;
+    display: flex;
+    animation: l10-0 2s linear infinite;
+}
+
+.loader:before,
+.loader:after {
+    content: "";
+    width: 15px;
+    background: #000;
+    animation: l10-1 2s linear infinite;
+}
+
+.loader:after {
+    animation-delay: -1s;
+    --s:-1;
+}
+
+@keyframes l10-1 {
+    0%,100% { transform: scaleX(var(--s, 1)) rotate(0); }
+    25%,75% { transform: scaleX(var(--s, 1)) rotate(180deg); }
+}
+
+@keyframes l10-0 {
+    0%,49.9% { transform: scaleX(1); }
+    50%,100% { transform: scaleX(-1); }
+}
+
+.paddinZero{
+    padding-bottom: 800px;
+}
