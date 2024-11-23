@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Notas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f1f1f1;
+        }
+        button {
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculadora de Notas</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Matéria</th>
+                <th>Nota Final</th>
+                <th>Calcular</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Redação</td>
+                <td id="redacao">-</td>
+                <td><button onclick="calcularNota('redacao')">Calcular</button></td>
+            </tr>
+            <tr>
+                <td>Gramática</td>
+                <td id="gramatica">-</td>
+                <td><button onclick="calcularNota('gramatica')">Calcular</button></td>
+            </tr>
+            <tr>
+                <td>Literatura</td>
+                <td id="literatura">-</td>
+                <td><button onclick="calcularNota('literatura')">Calcular</button></td>
+            </tr>
+            <tr>
+                <td>Matemática</td>
+                <td id="matematica">-</td>
+                <td><button onclick="calcularNota('matematica')">Calcular</button></td>
+            </tr>
+            <tr>
+                <td>Biologia</td>
+                <td id="biologia">-</td>
+                <td><button onclick="calcularNota('biologia')">Calcular</button></td>
+            </tr>
+            <tr>
+                <td>Física</td>
+                <td id="fisica">-</td>
+                <td><button onclick="calcularNota('fisica')">Calcular</button></td>
+            </tr>
+            <tr>
+                <td>Química</td>
+                <td id="quimica">-</td>
+                <td><button onclick="calcularNota('quimica')">Calcular</button></td>
+            </tr>
+            <tr>
+                <td>Filosofia</td>
+                <td id="filosofia">-</td>
+                <td><button onclick="calcularNota('filosofia')">Calcular</button></td>
+            </tr>
+            <tr>
+                <td>Geografia</td>
+                <td id="geografia">-</td>
+                <td><button onclick="calcularNota('geografia')">Calcular</button></td>
+            </tr>
+            <tr>
+                <td>História</td>
+                <td id="historia">-</td>
+                <td><button onclick="calcularNota('historia')">Calcular</button></td>
+            </tr>
+            <tr>
+                <td>História da Arte</td>
+                <td id="historia_da_arte">-</td>
+                <td><button onclick="calcularNota('historia_da_arte')">Calcular</button></td>
+            </tr>
+            <tr>
+                <td>Inglês</td>
+                <td id="ingles">-</td>
+                <td><button onclick="calcularNota('ingles')">Calcular</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        function calcularNota(materia) {
+            // Pede as médias dos três bimestres
+            let primeiroBimestre = prompt("Digite a média do 1º bimestre para " + materia + ":");
+            let segundoBimestre = prompt("Digite a média do 2º bimestre para " + materia + ":");
+            let terceiroBimestre = prompt("Digite a média do 3º bimestre para " + materia + ":");
+
+            // Converte as entradas para números
+            primeiroBimestre = parseFloat(primeiroBimestre);
+            segundoBimestre = parseFloat(segundoBimestre);
+            terceiroBimestre = parseFloat(terceiroBimestre);
+
+            // Verifica se as entradas são números válidos
+            if (isNaN(primeiroBimestre) || isNaN(segundoBimestre) || isNaN(terceiroBimestre)) {
+                alert("Por favor, insira valores válidos para as médias.");
+                return;
+            }
+
+            // Calcula a média dos três bimestres
+            let mediaTotal = (primeiroBimestre + segundoBimestre + terceiroBimestre);
+
+            // Calcula o valor necessário para completar 24 pontos
+            let pontosRestantes = 24 - mediaTotal;
+
+            // Atualiza a tabela com o valor necessário para completar 24 pontos
+            document.getElementById(materia).textContent = "Média: " + mediaTotal.toFixed(2) + " | Precisa tirar: " + pontosRestantes.toFixed(2);
+        }
+    </script>
+</body>
+</html>
