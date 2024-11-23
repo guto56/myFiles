@@ -1,0 +1,81 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(145deg, #023265, rgba(51, 22, 81, 0.653));
+}
+
+.container {
+    text-align: center;
+}
+
+.clock {
+    margin-bottom: 20px;
+}
+
+.time {
+    font-size: 8rem; 
+    font-weight: bold;
+    color: #333;
+
+}
+
+.location {
+    font-size: 1.4rem;
+    color: #666;
+}
+
+.buttons {
+    margin-top: 20px;
+    opacity: 0.1;
+    animation: fadeIn 1.3s forwards;
+}
+
+@keyframes fadeIn {
+    from{
+        opacity: 0.7;
+    }
+    to{
+        opacity: 0.1;
+    }
+}
+
+.buttons:hover{
+    animation: fadeOut 1.3s forwards;
+}
+
+@keyframes fadeOut {
+    from{
+        opacity: 0.1;
+    }
+    to{
+        opacity: 0.7;
+    }
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+button#showStopwatchBtn {
+    background-color: #4CAF50; 
+    color: white;
+}
+
+button#backBtn {
+    background-color: #f44336; 
+    color: white;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}

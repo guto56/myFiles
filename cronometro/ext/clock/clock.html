@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hora Atual</title>
+    <link rel="stylesheet" href="clock.css">
+</head>
+<body id="bodyId">
+    <div class="container">
+        <h1>Hora Atual</h1>
+        <div id="locationSelector">
+            <h2>Selecione o Estado e a Cidade</h2>
+            <label for="state">Estado:</label>
+            <select id="state" onchange="updateCities()">
+                <option value="">Selecione um Estado</option>
+                <option value="MT">Mato Grosso</option>
+                <option value="SP">São Paulo</option>
+                <option value="RJ">Rio de Janeiro</option>
+                <option value="MG">Minas Gerais</option>
+                <option value="BA">Bahia</option>
+            </select>
+            <br>
+            <label for="city">Cidade:</label>
+            <select id="city" disabled>
+                <option value="">Selecione uma Cidade</option>
+            </select>
+            <br>
+            <button id="showTimeBtn" disabled>Mostrar Hora Atual</button>
+            <button id="v2Btn" disabled>Mostrar V2</button>
+        </div>
+        <div id="currentTime" class="hidden">
+            <h2>Hora Atual</h2>
+            <div id="time"></div>
+        </div>
+        <div id="v2Container" class="hidden">
+    
+            <div id="v2Time"></div>
+            <div id="v2Location"></div>
+        </div>
+        <button id="toggleScreenBtn" class="btn" onclick="toggleScreen()">Mostrar Cronômetro</button>
+        <button id="switchThemeBtn" class="btn">Switch Theme</button>
+    </div>
+
+    <script src="clock.js"></script>
+</body>
+</html>

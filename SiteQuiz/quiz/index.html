@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de Perguntas</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        // Verifica se o usuário está logado
+        if (document.referrer.indexOf('login/login.html') === -1 && document.referrer.indexOf('login/register.html') === -1) {
+            window.location.href = '../login/login.html';
+        }
+    </script>
+</head>
+<body>
+    
+    <div id="loading" class="loading-overlay">
+        <div class="loader"></div>
+    </div>
+
+    <div class="quiz-container">
+        <div class="madeby">made by guto</div>
+        <div id="timer"></div>
+        <h1>Jogo de Perguntas</h1>
+        <div id="user-info">
+            <span id="user-name"></span>
+            <!-- Removido o botão do menu -->
+        </div>
+        <!-- Removido o menu-container -->
+        <div id="score-container">
+            Pontuação: <span id="score">0</span>
+        </div>
+        <div id="question-container">
+            <p id="question">Texto da pergunta aqui.</p>
+            <div id="answer-buttons" class="btn-container">
+                <!-- Botões de resposta serão adicionados aqui dinamicamente -->
+            </div>
+        <div class="sairbtn">
+            <button id="leavebtn" class="leavebtn">Sair</button>
+        </div>
+        </div>
+        <div id="feedback" class="feedback"></div>
+        <div id="countdown" class="countdown"></div>
+        <button id="next-button" class="btn hidden" onclick="nextQuestion()">Próxima</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

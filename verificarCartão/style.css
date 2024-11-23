@@ -2,10 +2,10 @@ body {
     display: flex; /* Usando flexbox */
     justify-content: center; /* Centraliza horizontalmente */
     align-items: center; /* Centraliza verticalmente */
-    height: 100vh; /* Define a altura do body para 100% da altura da viewport */
+    min-height: 100vh; /* Define a altura do body para 100% da altura da viewport */
     margin: 0; /* Remove margens padrão */
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #989898;
+    background: linear-gradient(145deg, #000000, #4c256c);
 }
 
 .cardImage{
@@ -26,6 +26,7 @@ body {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
     transition: transform 0.8s ease;
     margin-top: 200px;
+    margin-bottom: 25px;
 }
 
 .content:hover{
@@ -74,6 +75,8 @@ header {
 }
 
 button{
+    background: linear-gradient(145deg, #868686, #3c1c57);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-align: center;
     border-radius: 5px;
     border: 1px solid;
@@ -81,15 +84,13 @@ button{
     width: 100px;
     height: auto;
     margin-left: 65px;
-    font-size: 20px;
-    background-color: brown;
-    transition: background-color 1.1s ease;
+    font-size: 16px;
+    padding: 3px;
     transition: transform 0.8s ease;
 }
 
 button:hover{
-    transform: scale(1.07);
-    background-color: green;
+    transform: scale(1.11);
     cursor: pointer;
 }
 
@@ -99,13 +100,12 @@ button:hover{
 }
 
 #desc {
-    opacity: 0.7;
+    opacity: 0.6;
     font-family: Arial, sans-serif;
     font-size: 15px;
     color: #ffffff;
     letter-spacing: 2px; /* Adiciona espaço entre as letras */
-    overflow: hidden; /* Oculta o texto que está fora do contêiner */
-    border-right: 2px solid; /* Simula o cursor de digitação */
-  
+    border-right: 20px solid;
+    border-left: 20px solid;
 }
 
