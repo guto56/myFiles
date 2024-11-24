@@ -35,3 +35,25 @@ p{
 .addWork:hover{
     background-color: rgba(0, 128, 0, 0.551);
 }
+
+.conteudo{
+    background-color: rgba(34, 119, 102, 0.525);
+    border: 1px solid;
+    border-radius: 10px;
+    padding: 5px;
+    padding-left: 30px;
+    margin: 15px;
+}
+
+.removeBtn{
+    border: 1px solid;
+    border-radius: 5px;
+    background-color: rgba(165, 42, 42, 0.708);
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: transform 0.8s ease;
+}
+
+.removeBtn:hover{
+    transform: scale(1.1);
+}
