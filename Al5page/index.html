@@ -1,0 +1,304 @@
+<html lang="pt-BR"><head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="https://al5bank.com.br/wp-content/themes/al5bank/assets/img/logo-al5bank.svg" type="image/x-icon">
+    <title>Portais AL5 Bank</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div id="loading" class="loading-overlay"></div>
+        <div class="loader"></div>
+    </div>
+
+    <header>
+        <a href="https://www.al5bank.com.br" target="_blank">
+            <img src="https://al5bank.com.br/wp-content/themes/al5bank/assets/img/logo-al5bank.svg" alt="AL5 Bank Logo">
+        </a>
+    </header>
+
+	<div id="searchContainer" class="search-container">
+        <input type="text" id="searchInput" onkeyup="filterSites()" placeholder="Pesquisar sites..." style="font-size: 15px;">
+    </div>
+    <div class="tabs">
+        <button class="tab-link active" onclick="openTab(event, 'tab1')">Produção</button>
+        <button class="tab-link" onclick="openTab(event, 'tab2')">Homologação</button>
+    </div>
+
+    <div id="tab1" class="tab-content active">
+    <div class="container">
+        <div id="previewMouseOver" class="site-preview">
+            <a href="https://eguardian.ribha.com.br/login/" target="_blank">
+                <img src="./img/preview_7.png" alt="Portal Advice">
+                <div class="site-title">Advice</div>
+            </a>
+        </div>
+        
+		<div id="previewMouseOver" class="site-preview">
+            <a href="https://amaggiplay.amaggi.com.br/" target="_blank">
+                <img src="./img/preview_19.png" alt="AMAGGI Play">
+                <div class="site-title">AMAGGI Play</div>
+            </a>
+        </div>		    
+	
+		<div id="previewMouseOver" class="site-preview">
+            <a href="https://backoffice.acgsa.com.br/#/login" target="_blank">
+                <img src="./img/preview_1.png" alt="Backoffice ACGSA">
+                <div class="site-title">Backoffice ACGSA</div>
+            </a>
+        </div>
+        
+		<div id="previewMouseOver" class="site-preview">
+            <a href="https://backoffice.al5bank.com.br/" target="_blank">
+                <img src="./img/preview_9.png" alt="Portal Backoffice AL5Bank">
+                <div class="site-title">Backoffice AL5Bank</div>
+            </a>
+        </div>
+        
+		<div id="previewMouseOver" class="site-preview">
+            <a href="https://id.pismo.io/?returnTo=https://console.pismo.io/en" target="_blank">
+                <img src="./img/preview_10.png" alt="Backoffice Pismo ID">
+                <div class="site-title">Backoffice Pismo ID</div>
+            </a>		
+        </div>
+
+        <div id="previewMouseOver" class="site-preview">
+            <a href="https://parceirosbbconsorcios.com.br/(S(4h5opz3o5p1axp2tw4tljhst))/frmLogin.aspx" target="_blank">
+                <img src="./img/preview_3.png" alt="BB Consórcios">
+                <div class="site-title">BB Consórcios</div>
+            </a>
+        </div> 		
+
+        <div id="previewMouseOver" class="site-preview">
+            <a href="https://desk.blip.ai/" target="_blank">
+                <img src="./img/preview_26.png" alt="Blip">
+                <div class="site-title">Blip</div>
+            </a>
+        </div> 		
+				
+		<div id="previewMouseOver" class="site-preview">
+            <a href="https://cloud.bry.com.br/" target="_blank">
+                <img src="./img/preview_23.png" alt="Bry Cloud">
+                <div class="site-title">Bry Cloud</div>
+            </a>
+        </div>
+
+        <div id="previewMouseOver" class="site-preview">
+            <a href="https://nome.cetip.net.br/menu/ctp/TelaPrincipalCetip21" target="_blank">
+                <img src="./img/preview_4.png" alt="CETIP">
+                <div class="site-title">Cetip</div>
+            </a>
+        </div>
+
+        <div id="previewMouseOver" class="site-preview">
+            <a href="https://e65af9.ps.beyondtrustcloud.com/eEye.RetinaCSSAML" target="_blank">
+                <img src="./img/preview_22.png" alt="Consignado">
+                <div class="site-title">Cofre de senhas</div>
+            </a>
+        </div>
+		
+        <div id="previewMouseOver" class="site-preview">
+            <a href="https://consignado.al5bank.com.br/#/inicio" target="_blank">
+                <img src="./img/preview_15.png" alt="Consignado">
+                <div class="site-title">Consignado</div>
+            </a>
+        </div>
+
+        <div id="previewMouseOver" class="site-preview">
+            <a href="https://www.www1.consignet.com.br/" target="_blank">
+                <img src="./img/preview_5.png" alt="Consignet">
+                <div class="site-title">Consignet</div>
+            </a>
+        </div>
+		
+        <div id="previewMouseOver" class="site-preview">
+            <a href="https://crk.ribha.com.br/Segregada/" target="_blank">
+                <img src="./img/preview_6.png" alt="CRK">
+                <div class="site-title">CRK</div>
+            </a>
+        </div>
+
+		<div id="previewMouseOver" class="site-preview">
+            <a href="https://damaplan.twygoead.com/users/login">
+                <img src="./img/preview_28.png" alt="DAMAPLAN">
+                <div class="site-title">Damaplan</div>
+            </a>
+        </div>	
+
+        <div id="previewMouseOver" class="site-preview">
+            <a href="https://itsm.al5bank.net/glpi/" target="_blank">
+                <img src="./img/preview_21.png" alt="ITSM GLPi">
+                <div class="site-title">ITSM GLPi</div>
+            </a>
+        </div>
+		
+        <div id="previewMouseOver" class="site-preview">
+            <a href="https://amaggi.improvefy.com/" target="_blank">
+                <img src="./img/preview_18.png" alt="Jano">
+                <div class="site-title">Jano</div>
+            </a>
+        </div>
+		
+        <div id="previewMouseOver" class="site-preview">
+            <a href="https://jdspb27214112prod.jdpsti.com.br/JDCabineWeb/dll/JDCabineWEB.dll/consultarmsg" target="_blank">
+                <img src="./img/preview_8.png" alt="Portal JD Cabine de Comando">
+                <div class="site-title">JD Cabine de Comando</div>
+            </a>
+        </div>
+		
+		<div id="previewMouseOver" class="site-preview">
+            <a href="https://plattec.al5bank.net/" target="_blank">
+                <img src="./img/preview_11.png" alt="Portal Parceiro AL5Bank">
+                <div class="site-title">Plattec</div>
+            </a>
+        </div>
+
+		<div id="previewMouseOver" class="site-preview">
+            <a href="https://portalparceiro.al5bank.com.br/login?redirectTo=/" target="_blank">
+                <img src="./img/preview_2.png" alt="Portal Parceiro AL5Bank">
+                <div class="site-title">Portal Parceiro AL5Bank</div>
+            </a>
+        </div>
+        
+		<div id="previewMouseOver" class="site-preview">
+            <a href="https://portalrh2.amaggi.com.br/" target="_blank">
+                <img src="./img/preview_17.png" alt="Portal RH">
+                <div class="site-title">Portal RH</div>
+            </a>
+        </div>
+        
+		<div id="previewMouseOver" class="site-preview">
+            <a href="https://accounts.rdstation.com.br/" target="_blank">
+                <img src="./img/preview_12.png" alt="RD Station">
+                <div class="site-title">RD Station</div>
+            </a>
+        </div>
+        
+		<div id="previewMouseOver" class="site-preview">
+            <a href="https://se.amaggi.com.br/" target="_blank">
+                <img src="./img/preview_16.png" alt="SE - Soft Expert">
+                <div class="site-title">SE - Soft Expert</div>
+            </a>
+        </div>
+        
+		<div id="previewMouseOver" class="site-preview">
+            <a href="http://simplesip.al5bank.net/" target="_blank">
+                <img src="./img/preview_24.png" alt="Simples IP">
+                <div class="site-title">Simples IP</div>
+            </a>
+        </div>
+        
+		<div id="previewMouseOver" class="site-preview">
+            <a href="https://vhafews3wd01.sap.al5bank.com:44380/sap/bc/ui2/flp?sap-client=100&amp;sap-language=PT" target="_blank">
+                <img src="./img/preview_13.png" alt="SAP AL5Bank">
+                <div class="site-title">SAP AL5Bank</div>
+            </a>
+        </div>
+        
+		<div id="previewMouseOver" class="site-preview">
+            <a href="https://www.rtm.selic.gov.br/portal-selic/" target="_blank">
+                <img src="./img/preview_14.png" alt="SELIC">
+                <div class="site-title">Selic</div>
+            </a>
+        </div>
+        
+		<div id="previewMouseOver" class="site-preview">
+            <a href="https://universidadeamaggi.com.br/" target="_blank">
+                <img src="./img/preview_20.png" alt="Universidade AMAGGI">
+                <div class="site-title">Universidade AMAGGI</div>
+            </a>
+        </div>
+
+		<div id="previewMouseOver" class="site-preview">
+            <a href="https://outlook.office.com/mail/" target="_blank">
+                <img src="./img/preview_25.png" alt="Universidade AMAGGI">
+                <div class="site-title">WEBMAIL AL5 Bank</div>
+            </a>
+        </div>
+		
+		<div id="previewMouseOver" class="site-preview">
+            <a href="https://al5bank.zendesk.com/auth/v2/login/signin?return_to=https%3A%2F%2Fal5bank.zendesk.com%2Fagent%2Ftickets%2F158674&amp;theme=hc&amp;locale=19&amp;brand_id=360002963954&amp;auth_origin=360002963954%2Cfalse%2Ctrue&amp;role=agent">
+                <img src="./img/preview_27.png" alt="Zendex">
+                <div class="site-title">Zendesk</div>
+            </a>
+        </div>		
+    </div>
+        
+</div>
+
+<div id="tab2" class="tab-content">
+    <div class="container">
+        <div id="previewMouseOver" class="site-preview">
+            <a href="https://eguardianhml.ribha.com.br/Login/" target="_blank">
+                <img src="./img/preview_7.png" alt="Portal Advice Homologação">
+                <div class="site-title">Advice</div>
+            </a>
+        </div>	    
+
+		<div id="previewMouseOver" class="site-preview">
+            <a href="https://backoffice-hmg.al5bank.com.br/" target="_blank">
+                <img src="./img/preview_9.png" alt="Portal Backoffice AL5Bank Homologação">
+                <div class="site-title">Backoffice AL5Bank</div>
+            </a>
+        </div>
+
+        <div id="previewMouseOver" class="site-preview">
+            <a href="https://crkhml.ribha.com.br/segregada" target="_blank">
+                <img src="./img/preview_6.png" alt="CRK Homologação">
+                <div class="site-title">CRK</div>
+            </a>
+        </div>
+
+        <div id="previewMouseOver" class="site-preview">
+            <a href="https://jdspb27214112homl.jdpsti.rtm/JDCabineWeb/dll/JDCabineWEB.dll/consultarmsg" target="_blank">
+                <img src="./img/preview_8.png" alt="Portal JD Cabine de Comando Homologação">
+                <div class="site-title">JD Cabine de Comando</div>
+            </a>
+        </div>
+		
+		<div id="previewMouseOver" class="site-preview">
+            <a href="https://plattec-hml.ribha.com.br/" target="_blank">
+                <img src="./img/preview_11.png" alt="Portal Parceiro AL5Bank Homologação">
+                <div class="site-title">Plattec</div>
+            </a>
+        </div>
+
+		<div id="previewMouseOver" class="site-preview">
+            <a href="https://portalparceiro-hml.al5bank.com.br/" target="_blank">
+                <img src="./img/preview_2.png" alt="Portal Parceiro AL5Bank Homologação">
+                <div class="site-title">Portal Parceiro AL5Bank</div>
+            </a>
+        </div>
+
+		<div id="previewMouseOver" class="site-preview">
+            <a href="https://vhafews1wd01.sap.al5bank.com:44381/sap/bc/ui2/flp?sap-client=100&amp;sap-language=PT" target="_blank">
+                <img src="./img/preview_13.png" alt="SAP AL5Bank Homologação">
+                <div class="site-title">SAP AL5Bank</div>
+            </a>
+        </div>
+
+        <div id="previewMouseOver" class="site-preview">
+            <a href="https://hml.rtm.selic.gov.br/portal-selic/" target="_blank">
+                <img src="./img/preview_14.png" alt="SELIC">
+                <div class="site-title">Selic</div>
+            </a>
+        </div>
+
+	</div>
+    <header>
+        <a href="https://www.al5bank.com.br" target="_blank">
+            <img id="imgOpcZero" src="https://al5bank.com.br/wp-content/themes/al5bank/assets/img/logo-al5bank.svg" alt="AL5 Bank Logo">
+        </a>
+    </header> 
+
+</div>   
+    <footer>
+        <p>© 2024 AL5 Bank - Todos os direitos reservados. Tecnologia da Informação.</p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body></html>
