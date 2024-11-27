@@ -1,5 +1,4 @@
-const addWorkBtn = document.querySelector('.addWork');
-addWorkBtn.addEventListener('click', function(){
+function addWorkBtn(){
     const tarefas = document.querySelector('.tarefas');
 
     const div = document.createElement('div');
@@ -30,4 +29,5 @@ addWorkBtn.addEventListener('click', function(){
 
     div.append(name, desc, removeBtn);
     tarefas.append(div);
-})
+
+};
