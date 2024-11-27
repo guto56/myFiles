@@ -40,3 +40,13 @@ function openTab(evt, tabName) {
     evt.currentTarget.classList.add("active");
 }
 
+const searchInput = document.getElementById('searchInput');
+
+searchInput.addEventListener('mouseover', function(){
+    searchInput.style.animation = 'searchInputMouseEnter 0.8s forwards'
+});
+
+searchInput.addEventListener('mouseleave', function(){
+    searchInput.style.animation = 'searchInputMouseLeave 0.8s forwards'
+   
+});
