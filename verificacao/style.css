@@ -1,0 +1,57 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    height: 85vh; /* Define a altura da tela */
+    margin: 0; /* Remove a margem padrão */
+    background-color: #f2f2f2; /* Cor de fundo opcional */
+}
+
+#iniciar{
+    padding: 7px;
+    border-radius: 5px;
+    border: 0px solid;
+    background-color: rgba(0, 128, 0, 0.516);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.516);
+    cursor: pointer;
+    transition: transform 1s ease;
+}
+
+#iniciar:hover{
+    transform: scale(1.07);
+}
+
+.newDiv{
+    background-color: rgba(165, 42, 42, 0.874);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgb(0, 0, 0);
+}
+
+.labels{
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 3px;
+}
+
+.inputs{
+    margin-top: 3px;
+    border: 0px solid;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.btn{
+    margin-top: 20px;
+    border-radius: 5px;
+    border: 0px solid;
+    cursor: pointer;
+    background-color: rgba(0, 128, 0, 0.491);
+    color: white;
+    padding: 5px;
+
+}
