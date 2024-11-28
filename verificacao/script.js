@@ -34,18 +34,7 @@ iniciarBtn.addEventListener('click', function(){
     entrarBtn.innerText = 'Entrar.';
     entrarBtn.className = 'btn';
     entrarBtn.id = 'entrarBtn';
-    entrarBtn.onclick = 'verify()';
 
     div.append(h1, codLabel, codInput, mensagem, entrarBtn);
     content.appendChild(div);
 });
-
-function verify(){
-    const codigoDigitado = parseInt(document.getElementById('codInput').value);
-
-    if(codigoDigitado === seuCodigo){
-        alert('ijioj')
-    }else{
-        alert('error')
-    }
-}
