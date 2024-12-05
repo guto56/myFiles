@@ -12,7 +12,6 @@ document.getElementById('generateBtn').addEventListener('click', function() {
         const mensagem = document.getElementById('mensagem');
         mensagem.innerText = 'Por favor, insira um texto ou link.';
         mensagem.style.color = 'rgb(196, 21, 21)';
-
     }
 });
 
