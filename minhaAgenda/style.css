@@ -1,0 +1,82 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.header{
+    background-color: black;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin: -10px -10px -10px -10px;
+}
+
+p{
+    opacity: 0.5;
+    letter-spacing: 4px;
+}
+
+#afazeresP{
+    opacity: 1;
+    letter-spacing: 2px;
+    font-size: 25px;
+    margin-left: 20px;
+    background-color: rgba(184, 184, 184, 0.347);
+    padding: 10px;
+    border-radius: 10px;
+    width: 125px;
+}
+
+.adicionarTarefaDiv {
+    display: flex; /* Ativa o flexbox */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    height: calc(5vh); /* Ajusta a altura para deixar espaço para o cabeçalho */
+}
+
+#addWork{
+    margin-top: 75px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 0px solid;
+    padding: 13px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.525);
+    background-color: rgba(127, 255, 165, 0.311);
+    transition: background-color 1s ease;
+}
+
+#addWork:hover{
+    background-color: rgba(127, 255, 165, 0.733);
+}
+
+hr{
+    margin-top: 75px;
+    margin-bottom: 25px;
+}
+
+#tarefasDiv{
+    display: block;
+}
+
+#divDasTarefas{
+    background-color: rgba(184, 184, 184, 0.347);
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    margin-left: 8px;
+    width: 325px;
+    height: auto;
+}
+
+#nomeDaTarefa{
+    margin-left: 5px;
+    margin-top: 3px;
+}
+
+#descDaTarefa{
+    margin-top: 20px;
+    margin-bottom: -3px;
+    margin-left: 5px;
+    letter-spacing: 0px;
+}
