@@ -34,6 +34,13 @@ iniciarBtn.addEventListener('click', function(){
     entrarBtn.innerText = 'Entrar.';
     entrarBtn.className = 'btn';
     entrarBtn.id = 'entrarBtn';
+    entrarBtn.addEventListener('click', function(){
+        if(codInput.value == codigo){
+            alert('Código correto.');
+        }else{
+            alert('Código incorreto.');
+        }
+    });
 
     div.append(h1, codLabel, codInput, mensagem, entrarBtn);
     content.appendChild(div);
