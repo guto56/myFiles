@@ -36,7 +36,7 @@ iniciarBtn.addEventListener('click', function(){
     entrarBtn.id = 'entrarBtn';
     entrarBtn.addEventListener('click', function(){
         if(codInput.value == codigo){
-            alert('Código correto.');
+            window.location.href = 'home.html';
         }else{
             alert('Código incorreto.');
         }
