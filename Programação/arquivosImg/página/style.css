@@ -11,6 +11,7 @@ body {
 .addContent {
     text-align: center; /* Centraliza o botão */
     margin: 20px 0; /* Margem em cima e embaixo */
+    margin-bottom: 200px
 }
 
 .content {
@@ -31,8 +32,11 @@ body {
 }
 
 img {
-    max-width: 35px;
+    max-width: 50px;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.9);
     margin-right: 10px; /* Espaçamento entre a imagem e o texto */
+    cursor: pointer;
 }
 
 #desc {
@@ -69,7 +73,7 @@ a {
 
 #removeBtn{
     border: 1px solid;
-    border-radius: 3px;
+    border-radius: 10px;
     background-color: rgb(200, 228, 252);
     padding: 10px;
     transition: background-color 0.7s ease;

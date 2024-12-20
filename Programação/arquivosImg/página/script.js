@@ -6,12 +6,18 @@ btn.addEventListener('click', function(){
     div.id = 'contentDiv'
 
     const img = document.createElement('img');
-    img.src = './img/pasta-removebg-preview.png';
 
     const title = document.createElement('a');
     title.innerText = prompt('Qual o nome do Arquivo?');
     const titlePrompt = prompt('Diga o nome arquivo caminho. \n\nExemplo: teste \nResultado: teste.html')
     title.href = titlePrompt + '.html';
+
+    const apiUrl = `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(titlePrompt)}&size=500x500`;
+    img.src = apiUrl;
+
+    img.addEventListener('click', function(){
+        location.href = titlePrompt + '.html';
+    });
 
     const desc = document.createElement('p');
     desc.innerText = prompt('Qual a descrição de sua Página?');
