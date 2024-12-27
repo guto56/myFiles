@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PDF Compressor</title>
+    <title>Compressor de PDF</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -47,52 +47,54 @@
 </head>
 <body>
     <div class="container">
-        <h1>PDF Compressor</h1>
+        <h1>Compressor de PDF</h1>
         <input type="file" id="fileInput" accept="application/pdf" />
-        <button id="compressBtn">Compress</button>
+        <button id="compressBtn">Diminuir</button>
         <div class="output" id="output"></div>
     </div>
+
     <script>
         document.getElementById('compressBtn').addEventListener('click', async () => {
             const fileInput = document.getElementById('fileInput');
             const output = document.getElementById('output');
 
             if (!fileInput.files.length) {
-                output.textContent = 'Please select a PDF file.';
+                output.textContent = 'Por favor, selecione um arquivo PDF.';
                 return;
             }
 
             const file = fileInput.files[0];
 
-            // Validate file type
+            // Verificar o tipo do arquivo
             if (file.type !== 'application/pdf') {
-                output.textContent = 'Only PDF files are allowed.';
+                output.textContent = 'Somente arquivos PDF são permitidos.';
                 return;
             }
 
-            output.textContent = 'Compressing...';
+            output.textContent = 'Comprimindo...';
 
             try {
                 const formData = new FormData();
                 formData.append('file', file);
 
-                // PDF.co API Endpoint for compression
-                const response = await fetch('https://api.pdf.co/v1/file/compress', {
+                // Endpoint correto para compressão de PDF na PDF.co
+                const response = await fetch('https://api.pdf.co/v1/pdf/convert/to/compressed-pdf', {
                     method: 'POST',
                     headers: {
-                        'x-api-key': 'nexitlag@icloud.com_JFGdpJN9AN951GpE5SpNXQvZuoOhp4PFRZYIcGRoQ0iPHZRX8ev9JneCQqQjEHSw' // Replace YOUR_API_KEY with your actual API key
+                        'x-api-key': 'nexitlag@icloud.com_JFGdpJN9AN951GpE5SpNXQvZuoOhp4PFRZYIcGRoQ0iPHZRX8ev9JneCQqQjEHSw' // Sua chave API
                     },
                     body: formData
                 });
 
                 if (!response.ok) {
-                    throw new Error('Compression failed: ' + response.statusText);
+                    const errorMessage = await response.text();  // Pegando o erro detalhado
+                    throw new Error(`Compressão falhou: ${response.status} - ${errorMessage}`);
                 }
 
                 const data = await response.json();
 
                 if (!data.url) {
-                    throw new Error('No URL returned from API');
+                    throw new Error('URL do arquivo comprimido não retornada pela API.');
                 }
 
                 const compressedFileUrl = data.url;
@@ -100,11 +102,11 @@
                 const downloadLink = document.createElement('a');
                 downloadLink.href = compressedFileUrl;
                 downloadLink.download = 'compressed.pdf';
-                downloadLink.textContent = 'Download Compressed PDF';
+                downloadLink.textContent = 'Baixar PDF Comprimido';
                 output.innerHTML = '';
                 output.appendChild(downloadLink);
             } catch (error) {
-                output.textContent = 'Error: ' + error.message;
+                output.textContent = 'Erro: ' + error.message;
             }
         });
     </script>
