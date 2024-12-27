@@ -3,24 +3,27 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color: #dfdfdf;
+    height: 80vh;
+    background-image: url(./planoDeFundo.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .container {
     text-align: center;
-    background: rgba(225, 225, 225, 0.788);
+    background: rgba(255, 255, 255, 0.893);
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 17px rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
+    box-shadow: 0 0px 30px rgba(0, 0, 0, 0.9);
 }
 
 input {
     padding: 10px;
-    width: 300px;
+    width: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    transition: width 0.5s;
 }
 
 button {
@@ -45,35 +48,19 @@ img {
     max-width: 100%;
     height: auto;
     cursor: pointer;
-    background: rgba(200, 91, 2, 0.568);
-    padding: 6px;
+    background: rgba(15, 15, 15, 0.568);
+    padding: 9px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
-    border-radius: 10px;
+    border-radius: 20px;
     margin-bottom: 25px;
-    animation: transformOut 1s ease;
-}
-
-img:hover{
-    animation: transform 1s ease;
-}
-
-@keyframes transform {
-    from{
-        transform: scale(1);
-    }to{
-        transform: scale(1.1);
-    }
-}
-
-@keyframes transformOut {
-    from{
-        transform: scale(1.1);
-    }to{
-        transform: scale(1);
-    }
-    
+    transition: transform 0.5s;
 }
 
 .opacity{
     opacity: 0;
+}
+
+#title {
+    transition: opacity 0.3s ease; /* Transição suave na opacidade */
+    opacity: 1; /* Opacidade inicial */
 }
