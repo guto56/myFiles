@@ -77,33 +77,35 @@
                 const formData = new FormData();
                 formData.append('file', file);
 
-                // Endpoint correto para compressão de PDF na PDF.co
-                const response = await fetch('https://api.pdf.co/v1/pdf/convert/to/compressed-pdf', {
+                // URL da API TinyPNG para compressão de PDF
+                const response = await fetch('https://api.tinypng.com/shrink', {
                     method: 'POST',
                     headers: {
-                        'x-api-key': 'nexitlag@icloud.com_JFGdpJN9AN951GpE5SpNXQvZuoOhp4PFRZYIcGRoQ0iPHZRX8ev9JneCQqQjEHSw' // Sua chave API
+                        'Authorization': 'Basic ' + btoa('api:' + 'QSxJxscxt8z1bB8PLR1kJzmVwZS7TszW')  // Substitua pela sua chave de API
                     },
                     body: formData
                 });
 
                 if (!response.ok) {
-                    const errorMessage = await response.text();  // Pegando o erro detalhado
+                    const errorMessage = await response.text();
                     throw new Error(`Compressão falhou: ${response.status} - ${errorMessage}`);
                 }
 
                 const data = await response.json();
 
-                if (!data.url) {
+                // Verifica se a URL do arquivo comprimido foi retornada
+                if (!data.output || !data.output.url) {
                     throw new Error('URL do arquivo comprimido não retornada pela API.');
                 }
 
-                const compressedFileUrl = data.url;
+                const compressedFileUrl = data.output.url;
 
+                // Criar o link para download
                 const downloadLink = document.createElement('a');
                 downloadLink.href = compressedFileUrl;
                 downloadLink.download = 'compressed.pdf';
                 downloadLink.textContent = 'Baixar PDF Comprimido';
-                output.innerHTML = '';
+                output.innerHTML = '';  // Limpa a mensagem anterior
                 output.appendChild(downloadLink);
             } catch (error) {
                 output.textContent = 'Erro: ' + error.message;
