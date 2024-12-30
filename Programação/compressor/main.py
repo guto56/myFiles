@@ -33,4 +33,4 @@ if __name__ == "__main__":
     compress_pdf(input_pdf)
 
 
-    precisa baixar ghostscript
+    #precisa baixar ghostscript
