@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compressor de PDF</title>
+</head>
+<body>
+    <form class="content" action="/compress" method="POST" enctype="multipart/form-data">
+        <div class="titles">
+            <h2 id="pageTitle">AL5 Bank PDF Compressor</h2>
+            <label id="desc">Comprima arquivos PDF para tamanho menores.</label>
+        </div>
+        <div id="dropArea">
+            <p>Selecione ou arraste aqui o arquivo</p>
+            <input type="file" name="file" id="file" required>
+        </div>
+        <input id="submitBtn" type="submit" value="Comprimir PDF">
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>
