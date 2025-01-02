@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compressor de PDF</title>
+    <style>
+        body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: url(./planoDeFundo.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    height: 80vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.titles {
+    text-align: center;
+    background-color: rgba(17, 96, 165, 0.822);
+    color: whitesmoke;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    margin-bottom: 35px;
+    margin-top: -1px;
+}
+
+#desc {
+    letter-spacing: 4px;
+    opacity: 0.8;
+    font-size: 12px;
+}
+
+.content {
+    background-color: rgba(7, 97, 157, 0.918);
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    width: 350px;
+    box-shadow: 17px 17px 20px 1px rgba(0, 0, 0, 0.6);
+}
+
+#submitBtn {
+    background-color: rgba(4, 139, 4, 1);
+    border: 1px solid;
+    border-radius: 8px;
+    padding: 7px;
+    cursor: pointer;
+    width: 100%;
+}
+
+#dropArea {
+    border: 2px dashed white;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    color: white;
+    letter-spacing: 2px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+#dropArea:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+#file {
+    display: none;
+}
+
+    </style>
+</head>
+<body>
+    <form class="content" action="/compress" method="POST" enctype="multipart/form-data">
+        <div class="titles">
+            <h2 id="pageTitle">AL5 Bank PDF Compressor</h2>
+            <label id="desc">Comprima arquivos PDF para tamanho menores.</label>
+        </div>
+        <div id="dropArea">
+            <p>Selecione ou arraste aqui o arquivo</p>
+            <input type="file" name="file" id="file" required>
+        </div>
+        <input id="submitBtn" type="submit" value="Comprimir PDF">
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>
