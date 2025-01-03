@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clima da Cidade</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f1f1f1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .weather-info {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .weather-info p {
+            margin: 5px 0;
+        }
+
+        .error {
+            color: red;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Clima na Cidade</h1>
+        <input type="text" id="cidade" placeholder="Digite o nome da cidade" />
+        <button onclick="obterClima()">Obter Clima</button>
+        
+        <div class="weather-info" id="weather-info"></div>
+        <div class="error" id="error"></div>
+    </div>
+
+    <script>
+        const apiKey = 'SUA_CHAVE_API_AQUI'; // Substitua com a sua chave da API
+
+        function obterClima() {
+            const cidade = document.getElementById('cidade').value;
+            const errorDiv = document.getElementById('error');
+            const weatherDiv = document.getElementById('weather-info');
+            
+            if (!cidade) {
+                errorDiv.innerHTML = "Por favor, insira o nome de uma cidade.";
+                weatherDiv.innerHTML = "";
+                return;
+            }
+
+            errorDiv.innerHTML = "";
+            weatherDiv.innerHTML = "Carregando...";
+
+            // URL da API do OpenWeatherMap
+            const url = `https://api.openweathermap.org/data/2.5/weather?q=${cidade}&appid=${apiKey}&lang=pt_br&units=metric`;
+
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.cod === '404') {
+                        errorDiv.innerHTML = "Cidade não encontrada.";
+                        weatherDiv.innerHTML = "";
+                    } else {
+                        const temperatura = data.main.temp;
+                        const descricao = data.weather[0].description;
+                        const umidade = data.main.humidity;
+                        const cidadeNome = data.name;
+                        const pais = data.sys.country;
+
+                        weatherDiv.innerHTML = `
+                            <h2>${cidadeNome}, ${pais}</h2>
+                            <p><strong>Temperatura:</strong> ${temperatura}°C</p>
+                            <p><strong>Descrição:</strong> ${descricao}</p>
+                            <p><strong>Umidade:</strong> ${umidade}%</p>
+                        `;
+                    }
+                })
+                .catch(error => {
+                    errorDiv.innerHTML = "Erro ao buscar informações do clima.";
+                    weatherDiv.innerHTML = "";
+                });
+        }
+    </script>
+
+</body>
+</html>
