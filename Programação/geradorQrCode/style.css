@@ -11,7 +11,7 @@ body {
 
 .container {
     text-align: center;
-    background: rgba(255, 255, 255, 0.893);
+    background: rgba(2, 80, 144, 0.954);
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 0px 30px rgba(0, 0, 0, 0.9);
@@ -24,6 +24,7 @@ input {
     border: 1px solid #ccc;
     border-radius: 4px;
     transition: width 0.5s;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 1);
 }
 
 button {
@@ -33,6 +34,7 @@ button {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 1);
 }
 
 button:hover {
@@ -50,7 +52,7 @@ img {
     cursor: pointer;
     background: rgba(15, 15, 15, 0.568);
     padding: 9px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 20px rgb(247, 249, 249);
     border-radius: 20px;
     margin-bottom: 25px;
     transition: transform 0.5s;
@@ -63,4 +65,5 @@ img {
 #title {
     transition: opacity 0.3s ease; /* Transição suave na opacidade */
     opacity: 1; /* Opacidade inicial */
+    margin-bottom: 35px;
 }

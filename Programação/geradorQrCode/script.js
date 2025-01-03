@@ -37,7 +37,7 @@ qrcodeImg.addEventListener('mouseleave', function() {
     title.style.opacity = '0'; // Torna o título invisível
     
     setTimeout(() => {
-        title.innerText = 'Gerador de QR Code'; // Altera o texto
+        title.innerText = 'AL5 Code Generator.'; // Altera o texto
         title.style.opacity = '1'; // Torna o título visível novamente
     }, 300); // Tempo igual ao da transição
 });
@@ -46,7 +46,8 @@ const inputText = document.getElementById('inputText');
 
 inputText.addEventListener('input', function() {
     if (inputText.value.length > 1) {
-        inputText.style.width = '250px'; // Altera o tamanho para 200px
+        inputText.style.width = '250px'; // Altera
+        //  o tamanho para 200px
     } else {
         inputText.style.width = '10px'; // Retorna ao tamanho original
     }
