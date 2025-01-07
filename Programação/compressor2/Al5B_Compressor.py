@@ -211,9 +211,9 @@ def escolher_arquivo():
 
 # Função para reduzir a qualidade das imagens
 def reduzir_imagem(imagem_pil):
-    # Salvar imagem comprimida com qualidade 70%
+    # Salvar imagem comprimida com qualidade 45%
     imagem_comprimida = io.BytesIO()
-    imagem_pil.save(imagem_comprimida, format='JPEG', quality=70)
+    imagem_pil.save(imagem_comprimida, format='JPEG', quality=45)
     return imagem_comprimida.getvalue()
 
 # Função para atualizar a barra de progresso
@@ -249,7 +249,7 @@ def processar_pdf():
         # Iterar por todas as páginas do PDF e convertê-las em imagens
         for pagina_num in range(total_paginas):
             pagina = documento.load_page(pagina_num)
-            imagem_bytes = pagina.get_pixmap(matrix=fitz.Matrix(1.5, 1.5)).tobytes("jpeg")  # Aumentando a resolução para 2x
+            imagem_bytes = pagina.get_pixmap(matrix=fitz.Matrix(0.8, 0.8)).tobytes("jpeg")  # Aumentando a resolução para 2x
             imagem_pil = Image.open(io.BytesIO(imagem_bytes))  # Carregar a imagem com Pillow
             
             # Reduzir a qualidade da imagem

@@ -1,5 +1,5 @@
 ('C:\\Users\\augusto.corso\\OneDrive - AL5 '
- 'Bank\\Documentos\\AugustoLuiz\\myFiles\\compressor2\\build\\AL5B_Compressor\\PYZ-00.pyz',
+ 'Bank\\Documentos\\AugustoLuiz\\myFiles\\Programação\\compressor2\\build\\AL5B_Compressor\\PYZ-00.pyz',
  [('PIL',
    'C:\\Users\\augusto.corso\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\PIL\\__init__.py',
    'PYMODULE'),
