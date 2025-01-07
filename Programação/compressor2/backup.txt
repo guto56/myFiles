@@ -1,0 +1,174 @@
+import tkinter as tk
+import tkinter.font as tkfont
+from tkinter import filedialog, messagebox
+from tkinter import ttk  # Importando a Progressbar
+from PIL import Image
+import fitz  # PyMuPDF
+import os
+import io
+
+# Função para ler o arquivo de configurações
+def ler_config():
+    try:
+        with open("licenca.txt", "r") as f:
+            return f.read().strip()  # Retorna a licença salva
+    except FileNotFoundError:
+        return ""  # Se não existir, retorna string vazia
+
+# Função para salvar a licença no arquivo
+def salvar_licenca(licenca):
+    with open("licenca.txt", "w") as f:
+        f.write(licenca)
+
+# Função para escolher o arquivo PDF
+def escolher_arquivo():
+    caminho_arquivo = filedialog.askopenfilename(filetypes=[("Arquivos PDF", "*.pdf")])
+    if caminho_arquivo:
+        caminho_texto.delete(1.0, tk.END)  # Limpar texto atual
+        caminho_texto.insert(tk.END, caminho_arquivo)  # Exibir caminho do arquivo no campo de texto
+
+# Função para reduzir a qualidade das imagens
+def reduzir_imagem(imagem_pil):
+    # Salvar imagem comprimida com qualidade 70%
+    imagem_comprimida = io.BytesIO()
+    imagem_pil.save(imagem_comprimida, format='JPEG', quality=70)
+    return imagem_comprimida.getvalue()
+
+# Função para atualizar a barra de progresso
+def atualizar_barra_progresso(valor, total):
+    progresso['value'] = (valor / total) * 100
+    janela.update_idletasks()
+
+# Função para processar o PDF
+def processar_pdf():
+    config_uso = ler_config()
+    
+    if not config_uso:
+        mostrar_tela_licenca()
+        return
+    
+    caminho_arquivo = caminho_texto.get(1.0, tk.END).strip()
+    
+    if not caminho_arquivo or not os.path.exists(caminho_arquivo):
+        messagebox.showerror("Erro", "Por favor, selecione um arquivo PDF válido.")
+        return
+    
+    try:
+        # Abrir o PDF com PyMuPDF
+        documento = fitz.open(caminho_arquivo)
+        
+        # Criar uma lista para armazenar as imagens
+        imagens_comprimidas = []
+        
+        # Atualizando a barra de progresso
+        total_paginas = len(documento)
+        atualizar_barra_progresso(0, total_paginas)
+        
+        # Iterar por todas as páginas do PDF e convertê-las em imagens
+        for pagina_num in range(total_paginas):
+            pagina = documento.load_page(pagina_num)
+            imagem_bytes = pagina.get_pixmap(matrix=fitz.Matrix(1.5, 1.5)).tobytes("jpeg")  # Aumentando a resolução para 2x
+            imagem_pil = Image.open(io.BytesIO(imagem_bytes))  # Carregar a imagem com Pillow
+            
+            # Reduzir a qualidade da imagem
+            imagem_comprimida = reduzir_imagem(imagem_pil)
+            
+            # Adicionar a imagem comprimida à lista
+            imagens_comprimidas.append(imagem_comprimida)
+            
+            # Atualizar a barra de progresso
+            atualizar_barra_progresso(pagina_num + 1, total_paginas)
+        
+        # Gerar o novo caminho para salvar o PDF com as imagens comprimidas
+        nome_arquivo = os.path.basename(caminho_arquivo)
+        caminho_saida = os.path.join(os.path.dirname(caminho_arquivo), f"pdf_comprimido_{nome_arquivo}")
+        
+        # Criar o novo PDF a partir das imagens
+        pdf_novo = fitz.open()
+        for imagem_comprimida in imagens_comprimidas:
+            imagem_pil = Image.open(io.BytesIO(imagem_comprimida))
+            imagem_pil.save("temp.jpg", format="JPEG")  # Salvar a imagem comprimida temporariamente
+            rect = fitz.Rect(0, 0, imagem_pil.width, imagem_pil.height)  # Definir o tamanho da página
+            pagina = pdf_novo.new_page(width=rect.width, height=rect.height)
+            pagina.insert_image(rect, filename="temp.jpg")  # Inserir a imagem na página do PDF
+        
+        # Salvar o novo PDF
+        pdf_novo.save(caminho_saida)
+        pdf_novo.close()
+        
+        # Exibir mensagem de sucesso
+        messagebox.showinfo("Sucesso", f"PDF criado com sucesso! Salvo em: {caminho_saida}")
+    
+    except Exception as e:
+        messagebox.showerror("Erro", f"Erro ao processar o PDF: {str(e)}")
+
+# Função para mostrar a tela de licença
+def mostrar_tela_licenca():
+    tela_licenca = tk.Toplevel(janela)
+    tela_licenca.title("Verificar Licença")
+    
+    # Definir fonte para a tela de licença
+    fonte_padrao = tkfont.Font(family="Segoe UI", size=12)
+    
+    tk.Label(tela_licenca, text="Digite seu código de licença:", font=fonte_padrao).pack(pady=10)
+    
+    campo_licenca = tk.Entry(tela_licenca, font=fonte_padrao, width=40)
+    campo_licenca.pack(pady=10)
+    
+    def verificar_licenca():
+        codigo = campo_licenca.get()
+        if codigo:
+            if codigo == "LICENCA-VALIDA-123456":  # Código gerado
+                salvar_licenca(codigo)  # Salvar o código de licença
+                tela_licenca.destroy()
+                messagebox.showinfo("Licença Verificada", "Licença verificada com sucesso! Você pode agora usar o programa sem limitações.")
+            else:
+                messagebox.showerror("Erro", "Código de licença inválido.")
+        else:
+            messagebox.showerror("Erro", "Por favor, insira um código de licença.")
+
+    tk.Button(tela_licenca, text="Verificar", command=verificar_licenca, font=fonte_padrao, bg="lightgreen", relief="raised").pack(pady=10)
+
+# Função principal para configurar a interface gráfica
+def criar_interface():
+    global janela, progresso, caminho_texto, modo_escuro, label, botao_abrir, botao_comecar, rodape, botao_modo
+    
+    janela = tk.Tk()
+    janela.title("Compressor de PDF")
+    janela.geometry("500x400")  # Ajustando o tamanho da janela para incluir a barra de progresso
+    
+    # Definindo a fonte mais casual usando o tkFont
+    fonte_padrao = tkfont.Font(family="Segoe UI", size=12)
+
+    # Texto explicativo
+    label = tk.Label(janela, text="Escolha um arquivo PDF:", font=fonte_padrao)
+    label.pack(pady=10)
+
+    # Campo de texto para exibir o caminho do arquivo
+    caminho_texto = tk.Text(janela, height=1, width=40, font=fonte_padrao)
+    caminho_texto.pack(pady=10)
+
+    # Botões para escolher arquivo ou arrastar
+    botao_abrir = tk.Button(janela, text="Escolher Arquivo", command=escolher_arquivo, font=fonte_padrao, bg="lightblue", relief="raised")
+    botao_abrir.pack(pady=10)
+
+    # Barra de progresso
+    progresso = ttk.Progressbar(janela, orient="horizontal", length=400, mode="determinate")
+    progresso.pack(pady=20)
+
+    # Botão para começar o processamento
+    botao_comecar = tk.Button(janela, text="Começar", command=processar_pdf, font=fonte_padrao, bg="lightgreen", relief="raised")
+    botao_comecar.pack(pady=20)
+
+    # Rodapé
+    rodape = tk.Label(janela, text="Após clicar em 'Começar', aguarde a barra chegar ao final.", font=("Segoe UI", 10))
+    rodape.pack(pady=10)
+
+    # Inicializar a interface
+    janela.mainloop()
+
+# Iniciar o programa
+if __name__ == "__main__":
+    criar_interface()
+
+    
