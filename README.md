@@ -7,3 +7,5 @@ Windows Premium Comando Secreto:
 irm https://massgrave.dev/get | iex
 
 ver: https://aistudio.google.com/welcome?gad_source=1&gclid=EAIaIQobChMI15Xfiq_pigMVHJtaBR2LhhaxEAAYASAAEgLoMfD_BwE
+
+AIzaSyAqki9SdPACauu14revhfySAzjHOKT6H7U
