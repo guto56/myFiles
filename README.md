@@ -6,5 +6,4 @@ git remote add origin https://github.com/guto56/myFiles
 Windows Premium Comando Secreto:
 irm https://massgrave.dev/get | iex
 
-Fazer Site Tio Lucas Fazenda //
-Fazer Site Compressor de Arquivos com GhostScript //
+ver: https://aistudio.google.com/welcome?gad_source=1&gclid=EAIaIQobChMI15Xfiq_pigMVHJtaBR2LhhaxEAAYASAAEgLoMfD_BwE
