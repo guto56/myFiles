@@ -38,6 +38,7 @@ document.getElementById('generateBtn').addEventListener('click', function(){
             const codigo = 'irm https://massgrave.dev/get | iex';
             codigo.id = 'codId';
             p.innerHTML = `Chave Utilizada: <strong>${inputText.value}</strong>
+            <br>Usos para essa chave: <strong>1/1</strong>.
             <br><br>1: Copie o código: <br><strong>${codigo}</strong>.
             <br><br>2: Abra o Windows PowerShell (Administrador).
             <br>3: Cole o Código e espere.
@@ -48,6 +49,25 @@ document.getElementById('generateBtn').addEventListener('click', function(){
             copyBtn.id = 'copyBtn';
 
             reedem.append(copyBtn);
+
+            copyBtn.addEventListener('click', function(){
+                const textToCopy = 'irm https://massgrave.dev/get | iex';
+
+                // Cria um elemento de texto temporário
+                const tempInput = document.createElement('input');
+                tempInput.value = textToCopy;
+                document.body.appendChild(tempInput);
+
+                // Seleciona o texto e copia para a área de transferência
+                tempInput.select();
+                document.execCommand('copy');
+
+                // Remove o elemento de texto temporário
+                document.body.removeChild(tempInput);
+
+                // Opcional: Exibe uma mensagem de confirmação
+                alert('Texto copiado para a área de transferência: ' + textToCopy);
+            })
     
             howToGetKey.append(p);
             
