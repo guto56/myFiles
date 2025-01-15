@@ -1,4 +1,4 @@
-document.getElementById('generateBtn').addEventListener('click', function(){
+document.getEledqadqdqmentById('generateBtn').addEventListener('click', function(){
     const msg = document.getElementById('msg');
-    msg.innerText = 'teste';
+    msg.innerText = 'tete';
 })
