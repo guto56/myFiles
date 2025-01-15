@@ -7,7 +7,7 @@
 
 body {
     margin: 0;  
-    background: linear-gradient(155deg, #376675, #50717B, #273235);
+    background: linear-gradient(155deg, #5a828f, #273235);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -46,13 +46,13 @@ body {
     padding-bottom: 35px;
     font-size: 18px;
     max-width: 300px;
-    margin-top: 170px;
+    margin-top: 250px;
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.9);
     transition: transform 1.2s ease;
 }
 
 .reedem:hover{
-    transform: scale(1.5);
+    transform: scale(1.35);
 }
 
 input{
@@ -87,7 +87,7 @@ input{
 
 #msg{
     margin-top: 25px;
-    color: white;
+    color: #e9e9e9;
     background-color: rgba(255, 255, 255, 0.412);
     border-radius: 10px;
     padding: 10px;
@@ -119,7 +119,21 @@ input{
 }
 
 #howToGetKey{
+    opacity: 0;
     background-color: #e9e9e9;
     border-radius: 10px;
     padding: 15px;
+    font-size: 15px;
+    text-align: center;
+    display: flex;
+}
+
+#copyBtn{
+    background-color: #e9e9e9;
+    width: 20%;
+    margin-top: 25px;
+    border-radius: 5px;
+    padding: 5px;
+    border: 0px solid;
+    cursor: pointer;
 }

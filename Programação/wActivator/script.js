@@ -33,14 +33,21 @@ document.getElementById('generateBtn').addEventListener('click', function(){
             div.removeChild(newBtn);
             
             const howToGetKey = document.getElementById('howToGetKey');
+            howToGetKey.style.opacity = '1';    
             const p = document.createElement('p');
             const codigo = 'irm https://massgrave.dev/get | iex';
             codigo.id = 'codId';
             p.innerHTML = `Chave Utilizada: <strong>${inputText.value}</strong>
-            <br>1: Copie o código: <br><strong>${codigo}</strong>.
-            <br>2: Abra o Windows PowerShell (Administrador).
+            <br><br>1: Copie o código: <br><strong>${codigo}</strong>.
+            <br><br>2: Abra o Windows PowerShell (Administrador).
             <br>3: Cole o Código e espere.
             <br>4: Siga as instruções simples no Prompt de Comando (CMD).`;
+
+            const copyBtn = document.createElement('button');
+            copyBtn.innerText = 'Copiar';
+            copyBtn.id = 'copyBtn';
+
+            reedem.append(copyBtn);
     
             howToGetKey.append(p);
             
