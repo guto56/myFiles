@@ -113,3 +113,7 @@ input{
     box-shadow: 0 0 15px rgb(4, 91, 138);
 
 }
+
+.locked {
+    cursor: not-allowed; /* Define o cursor como bloqueado */
+}
