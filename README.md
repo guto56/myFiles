@@ -7,3 +7,6 @@ Windows Premium Comando Secreto:
 irm https://massgrave.dev/get | iex
 
 cores que eu nunca vi
+
+Site tio Lucas
+Site teteu
