@@ -2,6 +2,7 @@ document.getElementById('generateBtn').addEventListener('click', function(){
     const confirm = document.getElementById('confirm');
     confirm.innerText = 'Código válido, ao pressionar o botão abaixo, o reembolso não poderá mais ser solicitado.\nDeseja prosseguir?';
     confirm.style.opacity = '1';
+    confirm.style.marginBottom = '-15px';
 
     const inputText = document.getElementById('key').value;
     if(inputText === 'naopode'){
@@ -40,8 +41,9 @@ document.getElementById('generateBtn').addEventListener('click', function(){
             inputText.style
             div.removeChild(newBtn);
             
-            const howToGetKey = document.getElementById('howToGetKey');
-            howToGetKey.style.opacity = '1';    
+            const howToGetKey = document.createElement('div');
+            howToGetKey.id = 'howToGetKey'; 
+            howToGetKey.style.opacity = '1'; 
             const p = document.createElement('p');
             p.innerHTML = `<br>Usos para essa chave: <strong>1/2</strong>.
             <br><strong>Apenas será possível ativar pelo PC.</strong>
@@ -50,11 +52,13 @@ document.getElementById('generateBtn').addEventListener('click', function(){
             <br>2: Cole o mesmo Código que usou aqui e espere.
             <br>3: Siga as instruções simples no Prompt de Comando (CMD).`;
 
+            howToGetKey.append(p);
+
             const activatorDownload = document.createElement('button');
             activatorDownload.innerText = 'Baixar Ativador';
             activatorDownload.id = 'activator';
 
-            reedem.append(activatorDownload);
+            reedem.append(howToGetKey, activatorDownload);
 
             activatorDownload.addEventListener('click', function() {
                 const downloadUrl = './keyGenerator/Dist/AtivadorPC.exe';

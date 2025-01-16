@@ -111,11 +111,12 @@ input{
     cursor: pointer;
     background: linear-gradient(155deg, #52a0b9, #205f70);
     box-shadow: 0 0 15px rgb(4, 91, 138);
-
+    transition: transform 1s ease;
+    
 }
 
 #newBtnId:hover{
-    background: linear-gradient(155deg, #205f70, #52a0b9);
+    transform: scale(1.15);
 }	
 
 .locked {
@@ -141,4 +142,8 @@ input{
     padding: 5px;
     border: 0px solid;
     cursor: pointer;
+}
+
+#confirmP{
+    opacity: 0;
 }
