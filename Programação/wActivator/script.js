@@ -1,7 +1,10 @@
 document.getElementById('generateBtn').addEventListener('click', function(){
+    const confirm = document.getElementById('confirm');
+    confirm.innerText = 'Código válido, ao pressionar o botão abaixo, o reembolso não poderá mais ser solicitado.\nDeseja prosseguir?';
+    confirm.style.opacity = '1';
 
     const inputText = document.getElementById('key').value;
-    if(inputText === 'teste'){
+    if(inputText === 'naopode'){
         const inputText = document.getElementById('key');
 
         inputText.style.width = '150px'; // Altera
@@ -15,6 +18,11 @@ document.getElementById('generateBtn').addEventListener('click', function(){
         div.append(newBtn);
     
         newBtn.addEventListener('click', function(){
+
+            const confirm = document.getElementById('confirm');
+            const removeConfirm = document.querySelector('.reedem');
+            removeConfirm.removeChild(confirm);
+            
             const inputText = document.getElementById('key');
             inputText.readOnly = true;
             inputText.style.width = '200px';
@@ -35,47 +43,30 @@ document.getElementById('generateBtn').addEventListener('click', function(){
             const howToGetKey = document.getElementById('howToGetKey');
             howToGetKey.style.opacity = '1';    
             const p = document.createElement('p');
-            const codigo = 'irm https://massgrave.dev/get | iex';
-            codigo.id = 'codId';
-            p.innerHTML = `Chave Utilizada: <strong>${inputText.value}</strong>
-            <br>Usos para essa chave: <strong>1/1</strong>.
-            <br><br>1: Copie o código: <br><strong>${codigo}</strong>.
-            <br><br>2: Abra o Windows PowerShell (Administrador).
-            <br>3: Cole o Código e espere.
-            <br>4: Siga as instruções simples no Prompt de Comando (CMD).`;
+            p.innerHTML = `<br>Usos para essa chave: <strong>1/2</strong>.
+            <br><strong>Apenas será possível ativar pelo PC.</strong>
+            <br><br>Obs: O Windows dirá que é um arquivo duvidoso, por se tratar de um ativador mas sem ser Oficial Deles, isso é normal não se preocupe.
+            <br><br>1: Baixar o Ativador no botão abaixo.
+            <br>2: Cole o mesmo Código que usou aqui e espere.
+            <br>3: Siga as instruções simples no Prompt de Comando (CMD).`;
 
-            const copyBtn = document.createElement('button');
-            copyBtn.innerText = 'Copiar';
-            copyBtn.id = 'copyBtn';
+            const activatorDownload = document.createElement('button');
+            activatorDownload.innerText = 'Baixar Ativador';
+            activatorDownload.id = 'activator';
 
-            reedem.append(copyBtn);
+            reedem.append(activatorDownload);
 
-            copyBtn.addEventListener('click', function(){
-                const textToCopy = 'irm https://massgrave.dev/get | iex';
-
-                // Cria um elemento de texto temporário
-                const tempInput = document.createElement('input');
-                tempInput.value = textToCopy;
-                document.body.appendChild(tempInput);
-
-                // Seleciona o texto e copia para a área de transferência
-                tempInput.select();
-                document.execCommand('copy');
-
-                // Remove o elemento de texto temporário
-                document.body.removeChild(tempInput);
-
-                // Opcional: Exibe uma mensagem de confirmação
-                alert('Texto copiado para a área de transferência: ' + textToCopy);
-            })
+            activatorDownload.addEventListener('click', function() {
+                const downloadUrl = './keyGenerator/Dist/AtivadorPC.exe';
+                window.location.href = downloadUrl;
+            });
     
             howToGetKey.append(p);
             
         });
     }else{
-        alert('Chave inválida');
+        const confirm = document.getElementById('confirm');
+        confirm.innerText = 'Código inválido';
     }
-
-   
 
 });
