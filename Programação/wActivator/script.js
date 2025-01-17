@@ -75,14 +75,14 @@ document.getElementById('generateBtn').addEventListener('click', function(){
 
 });
 
-const theVideo = document.getElementById('theVideo');
-theVideo.addEventListener('mouseenter', function(){
-  
-})
+//const theVideo = document.getElementById('theVideo');
+//theVideo.addEventListener('mouseenter', function(){
+   // theVideo.classList.add('maior')
+//})
 
-theVideo.addEventListener('mouseleave', function(){
+//theVideo.addEventListener('mouseleave', function(){
     
-})
+//})
 
     //theVideo.style.transition = 'width 0.8s ease';
     //theVideo.style.width = '900px'
