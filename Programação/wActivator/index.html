@@ -1,31 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="shortcut icon" href="./icon.png" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>Your Activator - by guto</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de Ativação</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="content">
-        <header class="header">
-            <h1 id="title">Bem Vindo.</h1>
-            <p id="desc">Aqui, você poderá ativar seu Windows e Office Completo de Graça.</p>
-        </header>
+    <header class="header">
+        <h1 id="title">Bem Vindo.</h1>
+        <p id="desc">Aqui, você poderá ativar seu Windows e Office Completo de Graça.</p>
+    </header>
 
-        <hr>
+    <hr>
 
-        <div class="reedem">
-            <label for="key">Chave de Resgate ao Código:</label>
-            <input type="text" id="key" placeholder="Digite sua chave de ativação aqui.">
-            <button id="generateBtn" class="btn">Verificar</button>
-            <p id="confirm"></p>
-            <p id="msg"></p>
-            <section id="newBtnDiv"></section>
-        
-        </div>
+    <div class="reedem">
+        <label for="key">Chave de Resgate ao Código:</label>
+        <input type="text" id="key" placeholder="Digite sua chave de ativação aqui.">
+        <button id="generateBtn" class="btn">Verificar</button>
+        <p id="confirm"></p>
+        <p id="msg"></p>
+        <section id="newBtnDiv"></section>
     </div>
+
+    <div class="videoToShow">
+        <video id="theVideo" controls>
+            <source src="caminho/para/seu/video.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <footer>
+        <p>made by guto</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>

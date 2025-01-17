@@ -7,7 +7,9 @@
 
 body {
     margin: 0;  
-    background: linear-gradient(155deg, #5a828f, #273235);
+    background: linear-gradient(155deg, #8f9fa4, #273235);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,7 +19,7 @@ body {
 
 .header {
     background-color: black;
-    box-shadow: 0 0 30px rgba(25, 124, 194, 0.808);
+    box-shadow: 0 0 30px rgb(4, 51, 64);
     color: #1D3C58;
     text-align: center;
     padding: 20px;
@@ -45,14 +47,14 @@ body {
     padding-top: 25px;
     padding-bottom: 35px;
     font-size: 18px;
-    max-width: 300px;
+    width: 300px;
     margin-top: 250px;
-    box-shadow: 0 0 40px rgba(0, 0, 0, 0.9);
+    box-shadow: 0 0 40px rgba(4, 51, 64, 0.9);
     transition: transform 1.2s ease;
 }
 
 .reedem:hover{
-    transform: scale(1.35);
+    transform: scale(1.1);
 }
 
 input{
@@ -146,4 +148,30 @@ input{
 
 #confirmP{
     opacity: 0;
+}
+
+#theVideo{
+    margin-top: 80px;
+    margin-bottom: 150px;
+    border-radius: 19px;
+    width: 700px;
+    height: auto;
+    transition: box-shadow 1s ease; 
+    box-shadow: 0 0 20px rgba(4, 51, 64, 0.9);
+}
+
+#theVideo:hover{
+    box-shadow: 0 0 20px rgba(181, 181, 181, 0.9);
+}
+
+footer{
+    color: #a7a7a7;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    border: none; /* Remove qualquer borda */
+    position: fixed; /* Fixa a posição da header no topo */
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
