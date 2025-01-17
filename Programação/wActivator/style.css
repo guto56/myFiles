@@ -151,7 +151,6 @@ input{
 }
 
 #theVideo{
-    margin-top: 80px;
     margin-bottom: 150px;
     border-radius: 19px;
     width: 700px;
@@ -184,4 +183,11 @@ footer{
     margin-top: -30px;
     margin-bottom: 15px;
     box-shadow: 0 0 20px rgba(4, 51, 64, 0.9);
+}
+
+#videoText{
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 20px;
+    color: #1D3C58;
 }
