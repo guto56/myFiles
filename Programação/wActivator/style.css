@@ -170,8 +170,18 @@ footer{
     padding: 20px;
     width: 100%;
     border: none; /* Remove qualquer borda */
-    position: fixed; /* Fixa a posição da header no topo */
+    position: fixed; 
     bottom: 0;
     left: 0;
     right: 0;
+}
+
+#testeTabela{
+    background-color: white;
+    border-radius: 10px;
+    width: 15%;
+    margin: 0 auto 0;
+    margin-top: -30px;
+    margin-bottom: 15px;
+    box-shadow: 0 0 20px rgba(4, 51, 64, 0.9);
 }
