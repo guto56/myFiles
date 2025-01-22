@@ -10,3 +10,5 @@ cores que eu nunca vi
 
 Site tio Lucas
 Site teteu
+
+encodeURIComponent = serve para usar quando se quer mostrar palavras com acentos, espaços ou pontos graves mas sem erro.

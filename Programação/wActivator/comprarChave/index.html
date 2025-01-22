@@ -1,38 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="shortcut icon" href="buyIcon.png" type="image/x-icon">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gerenciador de Ativação</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header class="header">
-        <p id="testeTabela">.</p>
-        <h1 id="title">Bem Vindo.</h1>
-        <p id="desc">Aqui, você poderá comprar sua Chave para Ativar o Windows e Office.</p>
-    </header>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <link rel="shortcut icon" href="buyIcon.png" type="image/x-icon">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gerenciador de Ativação</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header class="header">
+            <p id="testeTabela">.</p>
+            <h1 id="title">Bem Vindo.</h1>
+            <p id="desc">Aqui, você poderá comprar sua Chave para Ativar o Windows e Office.</p>
+        </header>
 
-    <hr>
+        <hr>
 
-<div class="reedem">
-    <h3 for="key">O que é e como Comprar?</h3><br><br>
-    <hr id="hr1">
-    <p>Se você deseja adquirir nossos serviços, abaixo está a Tabela de Preços.</p>
-    <hr id="hr2">
-    <p id="precos"></p><br>
-    <h4>Neste momento, apenas um produto está disponível:</h2><br>
-    <p>Pacote Completo Windows + Office: R$59,46</p>
-    <button>Adquirir.</button><br><hr>
-    <h4>O que vem no Office?</h4><br>
-    <p>O Office é um conjunto de programas de produtividade de escritório desenvolvidos pela Microsoft. O pacote inclui aplicativos como Word, Excel, PowerPoint, Outlook, Access, Publisher e muito mais.</p>
-</div>
+    <div class="reedem">
+        <h3 for="key">O que é e como Comprar?</h3><br><br>
+        <hr id="hr1">
+        <p>Se você deseja adquirir nossos serviços, abaixo está a Tabela de Preços.</p>
+        <hr id="hr2">
+        <p id="precos"></p><br>
+        <h4>Neste momento, apenas um produto está disponível:</h2><br>
+        <p>Pacote Completo Windows + Office: R$59,46</p>
+        <button id="buyBtn" class="btn">Adquirir.</button><br><hr>
+        <h4>O que vem no Office?</h4><br>
+        <p>O Office é um conjunto de programas de produtividade de escritório desenvolvidos pela Microsoft. O pacote inclui aplicativos como Word, Excel, PowerPoint, Outlook, Access, Publisher e muito mais.</p>
+    </div>
 
-<footer>
-    <p>made by guto</p>
-</footer>
+    <div class="videoToShow">
+        <h1 id='videoText'>Vídeo exemplo:</h1>
+        <video id="theVideo" controls>
+            <source src="../comoAtivar.mov" type="video/mp4">
+        </video>
+    </div>
 
-<script src="script.js"></script>
-</body>
-</html>
+    <footer>
+        <p>made by guto</p>
+    </footer>
+
+    <script src="script.js"></script>
+    </body>
+    </html>
