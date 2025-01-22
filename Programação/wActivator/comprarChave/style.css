@@ -1,0 +1,89 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0; /* Remove margens padrão */
+    padding: 0; /* Remove preenchimentos padrão */
+    box-sizing: border-box; /* Garante que o padding e a borda sejam incluídos nas dimensões totais dos elementos */
+}
+
+body {
+    margin: 0;  
+    background: linear-gradient(155deg, #558897, #011722);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw; /* Garante que o corpo ocupe toda a largura da tela */
+    height: 80vh; /* Garante que o corpo ocupe toda a altura da tela */
+}
+
+.header {
+    background-color: black;
+    box-shadow: 0 0 30px rgb(4, 51, 64);
+    color: #1D3C58;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    border: none; /* Remove qualquer borda */
+    position: fixed; /* Fixa a posição da header no topo */
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+#desc{
+    opacity: 1;
+    letter-spacing: 3px;
+    margin-top: 20px;
+    color: #1D3C58;
+}
+
+.reedem {
+    background-color: #4A7B96;
+    color: #1D3C58;
+    border-radius: 10px;
+    padding: 5px;
+    text-align: center;
+    padding-top: 25px;
+    padding-bottom: 35px;
+    font-size: 18px;
+    width: 400px;
+    margin-top: 170px;
+    box-shadow: 0 0 25px rgba(14, 106, 131, 0.9);
+    transition: transform 1.2s ease;
+}
+
+.reedem:hover{
+    transform: scale(1.15);
+}
+
+footer{
+    color: #a7a7a7;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    border: none; /* Remove qualquer borda */
+    position: fixed; 
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+#testeTabela{
+    background-color: white;
+    border-radius: 10px;
+    width: 15%;
+    margin: 0 auto 0;
+    margin-top: -36px;
+    margin-bottom: 15px;
+    box-shadow: 0 0 20px rgba(4, 51, 64, 0.9);
+}
+
+hr{
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+h3{
+    margin-bottom: -30px;
+}
