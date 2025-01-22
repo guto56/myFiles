@@ -7,7 +7,7 @@
 
 body {
     margin: 0;  
-    background: linear-gradient(155deg, #8f9fa4, #273235);
+    background: linear-gradient(155deg, #558897, #011722);
     background-attachment: fixed;
     background-repeat: no-repeat;
     display: flex;
@@ -49,12 +49,12 @@ body {
     font-size: 18px;
     width: 300px;
     margin-top: 250px;
-    box-shadow: 0 0 40px rgba(4, 51, 64, 0.9);
+    box-shadow: 0 0 25px rgba(14, 106, 131, 0.9);
     transition: transform 1.2s ease;
 }
 
 .reedem:hover{
-    transform: scale(1.27);
+    transform: scale(1.33);
 }
 
 input{
