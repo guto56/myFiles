@@ -1,3 +1,4 @@
+
 body {
     font-family: Arial, sans-serif;
     display: flex;
@@ -7,11 +8,13 @@ body {
     background-image: url(./planoDeFundo.png);
     background-repeat: no-repeat;
     background-attachment: fixed;
+    backdrop-filter: blur(5px);
 }
 
 .container {
+    margin-top: 170px;
     text-align: center;
-    background: rgba(2, 80, 144, 0.954);
+    background: rgb(2, 80, 144);
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 0px 30px rgba(0, 0, 0, 0.9);
@@ -66,4 +69,30 @@ img {
     transition: opacity 0.3s ease; /* Transição suave na opacidade */
     opacity: 1; /* Opacidade inicial */
     margin-bottom: 35px;
+}
+
+header {
+    background-color: black;
+    position: fixed; /* Fixa a posição da header no topo */
+    top: 0; /* Alinha a header ao topo da tela */
+    left: 0; /* Alinha a header à esquerda da tela */
+    right: 0; /* Alinha a header à direita da tela */
+    z-index: 1000; /* Garante que a header fique acima de outros elementos */
+    width: 100%; /* Garante que a header ocupe toda a largura da tela */
+    padding-bottom: 55px;
+    box-shadow: 0 0 20px rgb(2, 80, 144);
+    border-radius: 35px;
+}
+
+#headerTitle{
+    color: rgb(2, 80, 144);
+    text-align: center;
+    margin-top: 50px;
+}
+
+#headerDesc{
+    color: rgba(2, 80, 144, 0.954);
+    text-align: center;
+    letter-spacing: 4px;
+    margin-top: -10px;
 }
