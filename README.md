@@ -20,3 +20,5 @@ Tatoo Marcelo
 Volei AL5 Bank (reservar)
 
 Unic docs pendentes
+
+Curso Amaggi: Breves Noções Sobre o Agronegócio.
