@@ -21,4 +21,5 @@ Volei AL5 Bank (reservar)
 
 Unic docs pendentes
 
-Curso Amaggi: Breves Noções Sobre o Agronegócio.
+Curso: Breves Noções Sobre o Agronegócio.
+https://universidadeamaggi.com.br/lms/#/home
