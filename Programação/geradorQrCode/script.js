@@ -16,46 +16,42 @@ document.getElementById('generateBtn').addEventListener('click', function() {
     }
 });
 
-
-const qrcodeImg = document.getElementById('qrcode');
-const title = document.getElementById('title');
-
-qrcodeImg.addEventListener('mouseover', function() {
-    const inputText = document.getElementById('inputText').value;
-    
-    // Fade out
-    title.style.opacity = '0'; // Torna o título invisível
-    
-    setTimeout(() => {
-        title.innerText = `${inputText}`; // Altera o texto
-        title.style.opacity = '1'; // Torna o título visível novamente
-    }, 300); // Tempo igual ao da transição
-});
-
-qrcodeImg.addEventListener('mouseleave', function() {
-    // Fade out
-    title.style.opacity = '0'; // Torna o título invisível
-    
-    setTimeout(() => {
-        title.innerText = 'AL5 Code Generator.'; // Altera o texto
-        title.style.opacity = '1'; // Torna o título visível novamente
-    }, 300); // Tempo igual ao da transição
-});
-
 const inputText = document.getElementById('inputText');
 
 inputText.addEventListener('input', function() {
     if (inputText.value.length > 1) {
-        inputText.style.width = '250px'; // Altera
-        //  o tamanho para 200px
+        inputText.style.width = '200px'; 
+        
+        const qrcodeImg = document.getElementById('qrcode');
+        const title = document.getElementById('title');
+
+        qrcodeImg.addEventListener('mouseover', function() {
+            const inputText = document.getElementById('inputText').value;
+            
+            title.style.opacity = '0'; 
+            
+            setTimeout(() => {
+                title.innerText = `${inputText}`; 
+                title.style.opacity = '1';
+            }, 300);
+        });
+
+        qrcodeImg.addEventListener('mouseleave', function() {
+            title.style.opacity = '0';
+            
+            setTimeout(() => {
+                title.innerText = 'Gerador de Código QR';
+                title.style.opacity = '1';
+            }, 300);
+        });
     } else {
-        inputText.style.width = '10px'; // Retorna ao tamanho original
+        inputText.style.width = '30px';
     }
 });
 
 const img = document.getElementById('qrcode');
 img.addEventListener('mouseenter', function(){
-    img.style.transform = 'scale(1.1)';
+    img.style.transform = 'scale(1.2)';
 })
 
 img.addEventListener('mouseleave', function(){
