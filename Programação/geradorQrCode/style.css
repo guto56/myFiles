@@ -1,13 +1,14 @@
+
 body {
     font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 80vh;
-    background-image: url(./AL5-BANK-WALLPAPER-V02C\ 1.png);
+    background-image: url(./planoDeFundo.png);
     background-repeat: no-repeat;
     background-attachment: fixed;
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(5px);
 }
 
 .container {
