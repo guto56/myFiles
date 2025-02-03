@@ -45,7 +45,7 @@ inputText.addEventListener('input', function() {
             }, 300);
         });
     } else {
-        inputText.style.width = '30px';
+        inputText.style.width = '55px';
     }
 });
 
@@ -56,4 +56,8 @@ img.addEventListener('mouseenter', function(){
 
 img.addEventListener('mouseleave', function(){
     img.style.transform = 'scale(1.0)';
+})
+
+document.addEventListener('input', function(ev){
+    if(ev.key)
 })

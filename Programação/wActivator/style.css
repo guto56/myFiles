@@ -191,3 +191,13 @@ footer{
     margin-bottom: 20px;
     color: #1D3C58;
 }
+
+#activator{
+    cursor: pointer;
+    transition: background 0.8s ease;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+
+#activator:hover{
+    background-color: #205f70;
+}
