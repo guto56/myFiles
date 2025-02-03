@@ -58,6 +58,29 @@ img.addEventListener('mouseleave', function(){
     img.style.transform = 'scale(1.0)';
 })
 
-document.addEventListener('input', function(ev){
-    if(ev.key)
+document.addEventListener('keydown', function(event){
+    if(event.key === '/'){
+        event.preventDefault();
+        inputText.focus();
+        inputText.style.width = '100px'; 
+    }
 })
+
+document.addEventListener('keydown', function(event){
+    if (event.key === 'Enter') {
+        const inputText = document.getElementById('inputText').value;
+        const qrcodeImg = document.getElementById('qrcode');
+
+        if (inputText) {
+            qrcodeImg.classList.remove('opacity');
+            const apiUrl = `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(inputText)}&size=200x200`;
+            qrcodeImg.src = apiUrl;
+            const mensagem = document.getElementById('mensagem');
+            mensagem.innerText = '';
+        } else {
+            const mensagem = document.getElementById('mensagem');
+            mensagem.innerText = 'Por favor, insira um texto ou link.';
+            mensagem.style.color = 'rgb(21, 24, 196)';
+        }
+    }
+});
