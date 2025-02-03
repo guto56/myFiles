@@ -1,3 +1,4 @@
+
 body {
     font-family: Arial, sans-serif;
     display: flex;
@@ -7,19 +8,26 @@ body {
     background-image: url(./planoDeFundo.png);
     background-repeat: no-repeat;
     background-attachment: fixed;
+    backdrop-filter: blur(5px);
 }
 
 .container {
+    margin-top: 170px;
     text-align: center;
-    background: rgba(2, 80, 144, 0.954);
+    background: rgba(2, 80, 144, 0.605);
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 0px 30px rgba(0, 0, 0, 0.9);
+    transition: transform 0.5s ease;
+}
+
+.container:hover{
+    transform: scale(1.1);
 }
 
 input {
     padding: 10px;
-    width: 10px;
+    width: 45px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -28,7 +36,7 @@ input {
 }
 
 button {
-    padding: 10px 15px;
+    padding: 11px 10px;
     background-color: #28a745;
     color: white;
     border: none;
@@ -43,19 +51,20 @@ button:hover {
 
 #qrcodeContainer {
     margin-top: 20px;
+    border: none;
 }
 
 img {
     margin-top: 10px;
-    max-width: 100%;
     height: auto;
     cursor: pointer;
     background: rgba(15, 15, 15, 0.568);
-    padding: 9px;
-    box-shadow: 0 0 20px rgb(247, 249, 249);
-    border-radius: 20px;
+    padding: 5px;
+    box-shadow: 0 0 30px rgb(5, 161, 161);
+    border-radius: 10px;
     margin-bottom: 25px;
     transition: transform 0.5s;
+    border: none;
 }
 
 .opacity{
@@ -63,7 +72,34 @@ img {
 }
 
 #title {
-    transition: opacity 0.3s ease; /* Transição suave na opacidade */
-    opacity: 1; /* Opacidade inicial */
+    color: aliceblue;
+    transition: opacity 0.3s ease;
+    opacity: 1;
     margin-bottom: 35px;
+    font-size: 25px;
+}
+
+header {
+    background-color: rgba(2, 80, 144, 0);
+    color: aliceblue;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    width: 100%; 
+    padding-bottom: 55px;
+    box-shadow: 0 0 20px rgb(1, 25, 44);
+    border-radius: 35px;
+}
+
+#headerTitle{
+    text-align: center;
+    margin-top: 50px;
+}
+
+#headerDesc{
+    text-align: center;
+    letter-spacing: 4px;
+    margin-top: -10px;
 }
