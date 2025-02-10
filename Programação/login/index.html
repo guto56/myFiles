@@ -127,7 +127,7 @@
     <script>
         function checkInput(input) {
             const label = document.querySelector(`label[for=${input.id}]`);
-            // Verifica se o comprimento da string digitada é maior que 2
+    
             if (input.value.length >= 1) {
                 label.classList.add('textRight1');
             } else {
@@ -188,6 +188,19 @@
                 label.classList.remove('textRight10');
             }
         }
+
+        const inputText = document.getElementById('inputText');
+
+inputText.addEventListener('input', function() {
+    const baseWidth = 55;  // Largura inicial
+    const widthIncrement = 5;  // Incremento de largura a cada caractere
+
+    // Calcular a nova largura com base na quantidade de caracteres
+    const newWidth = baseWidth + (inputText.value.length * widthIncrement);
+
+    // Definir a largura do input
+    inputText.style.width = `${newWidth}px`;
+});
     </script>
 </body>
 </html>
