@@ -1,0 +1,40 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    margin: 0;
+    padding: 0;   
+    background: linear-gradient(-45deg,#02325b, #3f586c);
+    background-attachment: fixed;
+}
+
+header{
+    text-align: center;
+    width: 100%; /* Ocupa toda a largura da página */
+    background: linear-gradient(-45deg,#1C3D5A, #4682B4);
+    padding: 20px;
+    padding-bottom: 40px;
+    box-shadow: 0 0 30px #080f15;
+}
+
+header p{
+    display: flex;
+    width: 40%;
+    margin: auto; /* Centraliza horizontalmente o <p> dentro do header */
+    letter-spacing: 2px;
+    background-color: #1c3d5a5e;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.content{
+    background-color: #4682B4;
+    padding: 5px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.7);
+    width: 50%;
+}
+
+.content h1{
+    margin-left: 50px;
+}
