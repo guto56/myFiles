@@ -8,21 +8,23 @@ body {
     background-image: url(./planoDeFundo.png);
     background-repeat: no-repeat;
     background-attachment: fixed;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(2px);
 }
 
 .container {
     margin-top: 170px;
     text-align: center;
-    background: rgba(2, 80, 144, 0.605);
+    background: rgba(2, 80, 144, 0.732);
     padding: 20px;
     border-radius: 12px;
-    box-shadow: 0 0px 30px rgba(0, 0, 0, 0.9);
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
     transition: transform 0.5s ease;
+    min-width: 350px;
+    max-height: 390px;
 }
 
 .container:hover{
-    transform: scale(1.1);
+    transform: scale(1.15);
 }
 
 input {
@@ -60,11 +62,15 @@ img {
     cursor: pointer;
     background: rgba(15, 15, 15, 0.568);
     padding: 5px;
-    box-shadow: 0 0 30px rgb(5, 161, 161);
+    box-shadow: 0 0 10px rgba(5, 161, 161, 0.742);
     border-radius: 10px;
     margin-bottom: 25px;
     transition: transform 0.5s;
     border: none;
+}
+
+img:hover{
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.742);
 }
 
 .opacity{

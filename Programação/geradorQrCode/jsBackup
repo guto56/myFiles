@@ -19,23 +19,39 @@ document.getElementById('generateBtn').addEventListener('click', function() {
 const inputText = document.getElementById('inputText');
 
 inputText.addEventListener('input', function() {
-    const baseWidth = 55;  // Largura inicial
-    const widthIncrement = 5;  // Incremento de largura a cada caractere
+    if (inputText.value.length > 1) {
+        inputText.style.width = '65px'; 
+        
+        const qrcodeImg = document.getElementById('qrcode');
+        const title = document.getElementById('title');
 
-    // Calcular a nova largura com base na quantidade de caracteres
-    const newWidth = baseWidth + (inputText.value.length * widthIncrement);
+        qrcodeImg.addEventListener('mouseover', function() {
+            const inputText = document.getElementById('inputText').value;
+            
+            title.style.opacity = '0'; 
+            
+            setTimeout(() => {
+                title.innerText = `${inputText}`; 
+                title.style.opacity = '1';
+            }, 300);
+        });
 
-    // Definir a largura do input
-    inputText.style.width = `${newWidth}px`;
+        qrcodeImg.addEventListener('mouseleave', function() {
+            title.style.opacity = '0';
+            
+            setTimeout(() => {
+                title.innerText = 'Gerador de Código QR';
+                title.style.opacity = '1';
+            }, 300);
+        });
+    } else {
+        inputText.style.width = '55px';
+    }
 });
 
 const img = document.getElementById('qrcode');
 img.addEventListener('mouseenter', function(){
-    img.style.transform = 'scale(1.15)';
-
-    const textValue = document.getElementById('inputText').value;
-
-    inputText.value = `${textValue}`;
+    img.style.transform = 'scale(1.2)';
 })
 
 img.addEventListener('mouseleave', function(){
@@ -46,7 +62,7 @@ document.addEventListener('keydown', function(event){
     if(event.key === '/'){
         event.preventDefault();
         inputText.focus();
-        inputText.style.width = '70px'; 
+        inputText.style.width = '60px'; 
         inputText.placeholder = 'ESC para Limpar.'
     }else if(event.key === 'Escape'){
         inputText.value = '';
