@@ -46,7 +46,7 @@ document.addEventListener('keydown', function(event){
     if(event.key === '/'){
         event.preventDefault();
         inputText.focus();
-        inputText.style.width = '110px'; 
+        inputText.style.width = '70px'; 
         inputText.placeholder = 'ESC para Limpar.'
     }else if(event.key === 'Escape'){
         inputText.value = '';
