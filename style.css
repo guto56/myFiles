@@ -37,6 +37,17 @@ header p{
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.7);
     width: 50%;
     cursor: not-allowed;
+    border-radius: 20px;
+}
+
+.content img {
+    width: 200px;
+    height: auto;
+    padding: 15px;
+}
+
+#qrIMG{
+    border-radius: 10px;
 }
 
 .content h1{
@@ -85,4 +96,10 @@ header p{
     margin-bottom: 200px;
     box-shadow: 0 0 15px rgb(28, 79, 182);
     cursor: not-allowed;
+}
+
+.blur-effect {
+    background: linear-gradient(to right, #ff6a0000, #ee097800);
+    transition: filter 0.3s ease-out; /* Suaviza a transição do efeito */
+    will-change: filter;
 }
