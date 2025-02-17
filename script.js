@@ -6,6 +6,9 @@ document.addEventListener('keydown', function(event) {
     if (event.key === 'l') {
         event.preventDefault();
         window.open('https://www.icloud.com/shortcuts/c12b784f1e984ce7b6f3bdd3702817a2', '_blank');
+    }else if(event.key === 'L'){
+        event.preventDefault();
+        window.open('https://www.icloud.com/shortcuts/c12b784f1e984ce7b6f3bdd3702817a2', '_blank');
     }
 });
 
