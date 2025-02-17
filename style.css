@@ -16,6 +16,7 @@ header{
     padding: 20px;
     padding-bottom: 40px;
     box-shadow: 0 0 30px #080f15;
+    cursor: cell;
 }
 
 header p{
@@ -29,12 +30,59 @@ header p{
 }
 
 .content{
-    background-color: #4682B4;
+    display: flex;
+    margin: 45px auto auto auto;
+    background-color: #265681;
     padding: 5px;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.7);
     width: 50%;
+    cursor: not-allowed;
 }
 
 .content h1{
-    margin-left: 50px;
+    margin-left: 3px;
+    margin-top: -3px;
+}
+
+.content p{
+    margin-left: 10px;
+    font-size: 19px;
+    background-color: #02315b4a;
+    padding: 20px;
+    border-radius: 13px;
+}
+
+.bloco1{
+    padding: 20px;
+}
+
+.btn{
+    background: linear-gradient(45deg,#265782, #4682B4);
+    margin-top: 50px;
+    margin-bottom: 15px;
+    display: block;
+    border-radius: 10px;
+    border: none;
+    cursor: grab;
+    padding: 18px;
+    font-size: 19px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7)
+}
+
+.sitePreview {
+    display: flex;               /* Usando flexbox */
+    justify-content: center;     /* Centraliza horizontalmente */
+    align-items: center;         /* Centraliza verticalmente (caso precise) */
+    width: 100%;                 /* A div ocupa 100% da largura do container */
+    height: auto;                /* Ajuste conforme necessário */
+}
+
+.sitePreview img {
+    max-width: 35%;             /* Garantir que a imagem não ultrapasse a largura da div */
+    height: auto;   
+    border-radius: 15px;             /* Ajusta a altura automaticamente para manter as proporções */
+    margin-top: 100px;
+    margin-bottom: 200px;
+    box-shadow: 0 0 15px rgb(28, 79, 182);
+    cursor: not-allowed;
 }
