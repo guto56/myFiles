@@ -117,26 +117,40 @@
             <h1 id="title">AL5 Bank Login Page</h1>
             <div class="loginForm">
                 <label for="user" id="userLabel">Username:</label>
-                <input type="text" name="user" id="user" oninput="checkInput(this)">
+                <input type="text" name="user" id="userInput" oninput="checkInput(this)">
                 <label for="passw" id="passwLabel">Password:</label>
-                <input type="password" name="passw" id="passw" oninput="checkInput(this)">
+                <input type="password" name="passw" id="passwInput" oninput="checkInput(this)">
             </div>
         </div>
     </content>
 
     <script>
-        const inputText = document.getElementById('inputText');
+        const userInput = document.getElementById('userInput');
+        const userlabel = document.getElementById('userLabel');
 
-inputText.addEventListener('input', function() {
-    const baseWidth = 55;  // Largura inicial
-    const widthIncrement = 5;  // Incremento de largura a cada caractere
+        userInput.addEventListener('input', function() {
+            const userWidth = 1;  // Largura inicial
+            const userWidthIncrement = 5;  // Incremento de largura a cada caractere
 
-    // Calcular a nova largura com base na quantidade de caracteres
-    const newWidth = baseWidth + (inputText.value.length * widthIncrement);
+            // Calcular a nova largura com user na quantidade de caracteres
+            const userNewWidth = userWidth + (userInput.value.length * userWidthIncrement);
+          
 
-    // Definir a largura do input
-    inputText.style.width = `${newWidth}px`;
-});
+            // Definir a largura do input
+            userlabel.style.marginLeft = `${userNewWidth}px`;
+    });
+
+        const passwInput = document.getElementById('passwInput');
+        const passwLabel = document.getElementById('passwLabel');
+
+        passwInput.addEventListener('input', function(){
+            const passwBaseWidth = 1;
+            const passwWidthIncrement = 5;
+
+            const passwLabelw = passwBaseWidth + (passwInput.value.length * passwWidthIncrement);
+            passwLabel.style.marginLeft = `${passwLabelw}px`;
+        })
+
     </script>
 </body>
 </html>
