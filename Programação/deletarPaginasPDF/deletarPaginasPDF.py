@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import filedialog, messagebox, simpledialog
-from PyPDF2 import PdfReader, PdfWriter
+from PyPDF2 import PdfReader, PdfWriter # type: ignore
 
 def selecionar_pdf():
     # Função para selecionar o arquivo PDF
