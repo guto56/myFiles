@@ -92,40 +92,41 @@
         /* Botão de compra */
         .buy-button {
             margin-top: 30px;
-            font-size: 1.2rem;
+            font-size: 1rem;
             color: white;
-            background-color: #e60000;
-            padding: 15px 30px;
+            background-color: #4CAF50; /* Verde mais confortável */
+            padding: 8px 20px; /* Botão menor */
             border: none;
-            border-radius: 8px;
+            border-radius: 5px;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: background-color 0.3s;
             position: relative;
             overflow: hidden;
+            transition: background-color 0.3s ease;
         }
 
         .buy-button:hover {
-            background-color: #d40000;
+            background-color: #45a049; /* Cor mais escura no hover */
         }
 
         .buy-button i {
-            margin-right: 10px;
-            font-size: 1.5rem;
-            transition: transform 0.5s ease;
+            font-size: 1.3rem;
+            position: absolute;
+            left: -40px; /* Inicialmente fora do botão */
+            transition: left 1s ease-in-out; /* Animação para mover o caminhão */
         }
 
         .buy-button .buy-text {
-            font-size: 1.2rem;
+            font-size: 1rem;
             visibility: hidden;
             opacity: 0;
             transition: opacity 1s ease, visibility 0s 1s;
         }
 
         .buy-button.clicked i {
-            transform: translateX(100%);
+            left: 100%; /* Mover o caminhão completamente para fora do botão */
         }
 
         .buy-button.clicked .buy-text {
@@ -160,7 +161,7 @@
 
             .buy-button {
                 width: 100%;
-                padding: 15px;
+                padding: 10px;
             }
         }
 
@@ -205,8 +206,8 @@
     <!-- Botão de compra -->
     <button class="buy-button" onclick="purchaseProduct()">
         <i class="fas fa-truck"></i>
-        <span class="buy-text">Compra realizada com sucesso!</span>
-        Comprar Agora
+        Adquirir
+        <span class="buy-text">Parabéns pela sua compra!</span>
     </button>
 
     <!-- Link para voltar à página anterior -->
@@ -220,13 +221,13 @@
     <script>
         function purchaseProduct() {
             const button = document.querySelector('.buy-button');
-            button.classList.add('clicked'); // Inicia a animação
+            button.classList.add('clicked'); // Inicia a animação do caminhão
 
             setTimeout(() => {
                 // Exibe o texto de sucesso após a animação do caminhão
                 document.querySelector('.buy-text').style.visibility = 'visible';
                 document.querySelector('.buy-text').style.opacity = 1;
-            }, 500); // Aguarda 500ms antes de mostrar o texto de sucesso
+            }, 1000); // Aguarda 1 segundo para mostrar o texto de sucesso
         }
     </script>
 </body>
