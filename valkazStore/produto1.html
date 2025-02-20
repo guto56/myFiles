@@ -104,7 +104,8 @@
             justify-content: center;
             position: relative;
             overflow: hidden;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, width 1s ease;
+            width: auto; /* A largura será ajustada automaticamente conforme o conteúdo */
         }
 
         .buy-button:hover {
@@ -123,6 +124,7 @@
             visibility: hidden;
             opacity: 0;
             transition: opacity 1s ease, visibility 0s 1s;
+            position: absolute;
         }
 
         .buy-button.clicked i {
@@ -133,6 +135,10 @@
             visibility: visible;
             opacity: 1;
             transition: opacity 1s ease, visibility 0s 0s;
+        }
+
+        .buy-button.clicked span {
+            visibility: hidden; /* Esconde o texto "Adquirir" quando clicado */
         }
 
         /* Responsividade */
@@ -206,7 +212,7 @@
     <!-- Botão de compra -->
     <button class="buy-button" onclick="purchaseProduct()">
         <i class="fas fa-truck"></i>
-        Adquirir
+        <span>Adquirir</span>
         <span class="buy-text">Parabéns pela sua compra!</span>
     </button>
 
