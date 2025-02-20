@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produto 1 - Valkaz Store</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(180deg, #000000, #333333);
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 0 10px;
+        }
+
+        header {
+            text-align: center;
+            background-color: black;
+            color: white;
+            width: 100%;
+            padding: 20px 0;
+            box-shadow: 0 0 15px rgba(196, 0, 0, 0.9);
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            letter-spacing: 5px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            letter-spacing: 4px;
+            opacity: 0.8;
+            padding-bottom: 15px;
+        }
+
+        .product-container {
+            margin-top: 120px;
+            max-width: 1200px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .product-container img {
+            width: 80%;
+            height: auto;
+            max-width: 600px;
+            margin-bottom: 20px;
+        }
+
+        .product-container h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .product-container p {
+            font-size: 1.1rem;
+            color: #bbb;
+            max-width: 800px;
+            margin-bottom: 30px;
+        }
+
+        .back-link {
+            margin-top: 20px;
+            font-size: 1rem;
+            text-decoration: none;
+            color: #fff;
+            background-color: #333;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .back-link:hover {
+            background-color: #f1f1f1;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Valkaz</h1>
+        <p>A sua nova marca de roupas. Agressividade e Simplicidade ao mesmo tempo, no seu corpo.</p>
+    </header>
+
+    <div class="product-container">
+        <!-- Imagem do produto -->
+        <img src="../imagens/Captura de tela 2025-02-06 161351.png" alt="Produto 1">
+
+        <!-- Título do produto -->
+        <h2>Produto 1</h2>
+
+        <!-- Descrição do produto -->
+        <p>Esta peça combina conforto e estilo. Ideal para quem busca praticidade e elegância em um só look.</p>
+
+        <!-- Link para voltar à página anterior -->
+        <a href="index.html" class="back-link">Voltar à loja</a>
+    </div>
+</body>
+</html>
