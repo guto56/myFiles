@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produto 1 - Valkaz Store</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"> <!-- Link para o ícone do caminhão -->
     <style>
         * {
             margin: 0;
@@ -56,7 +57,6 @@
             justify-content: center;
             align-items: center;
             flex-direction: row;
-            text-align: center;
             gap: 40px;
             padding: 20px;
         }
@@ -89,20 +89,49 @@
             margin-top: 20px;
         }
 
-        .back-link {
-            margin-top: 20px;
-            font-size: 1rem;
-            text-decoration: none;
-            color: #fff;
-            background-color: #333;
-            padding: 10px 20px;
-            border-radius: 5px;
+        /* Botão de compra */
+        .buy-button {
+            margin-top: 30px;
+            font-size: 1.2rem;
+            color: white;
+            background-color: #e60000;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             transition: background-color 0.3s;
+            position: relative;
+            overflow: hidden;
         }
 
-        .back-link:hover {
-            background-color: #f1f1f1;
-            color: #333;
+        .buy-button:hover {
+            background-color: #d40000;
+        }
+
+        .buy-button i {
+            margin-right: 10px;
+            font-size: 1.5rem;
+            transition: transform 0.5s ease;
+        }
+
+        .buy-button .buy-text {
+            font-size: 1.2rem;
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 1s ease, visibility 0s 1s;
+        }
+
+        .buy-button.clicked i {
+            transform: translateX(100%);
+        }
+
+        .buy-button.clicked .buy-text {
+            visibility: visible;
+            opacity: 1;
+            transition: opacity 1s ease, visibility 0s 0s;
         }
 
         /* Responsividade */
@@ -128,16 +157,31 @@
             .product-info p {
                 font-size: 1rem;
             }
+
+            .buy-button {
+                width: 100%;
+                padding: 15px;
+            }
         }
 
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2rem;
-            }
+        /* Rodapé */
+        footer {
+            margin-top: 50px;
+            width: 100%;
+            text-align: center;
+            color: #bbb;
+            padding: 20px 0;
+            background-color: #222;
+        }
 
-            header p {
-                font-size: 1rem;
-            }
+        footer p {
+            font-size: 1rem;
+        }
+
+        footer a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -158,7 +202,32 @@
         </div>
     </div>
 
+    <!-- Botão de compra -->
+    <button class="buy-button" onclick="purchaseProduct()">
+        <i class="fas fa-truck"></i>
+        <span class="buy-text">Compra realizada com sucesso!</span>
+        Comprar Agora
+    </button>
+
     <!-- Link para voltar à página anterior -->
     <a href="index.html" class="back-link">Voltar à loja</a>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2025 Valkaz Store. Feito por <a href="#">Augusto Luiz</a>.</p>
+    </footer>
+
+    <script>
+        function purchaseProduct() {
+            const button = document.querySelector('.buy-button');
+            button.classList.add('clicked'); // Inicia a animação
+
+            setTimeout(() => {
+                // Exibe o texto de sucesso após a animação do caminhão
+                document.querySelector('.buy-text').style.visibility = 'visible';
+                document.querySelector('.buy-text').style.opacity = 1;
+            }, 500); // Aguarda 500ms antes de mostrar o texto de sucesso
+        }
+    </script>
 </body>
 </html>
