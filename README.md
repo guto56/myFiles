@@ -4,13 +4,21 @@ importar:
 git remote add origin https://github.com/guto56/myFiles
 
 Site tio Lucas
-Site teteu
-
-encodeURIComponent = serve para usar quando se quer mostrar palavras com acentos, espaços ou pontos graves mas sem erro.
+Site Teteu
 
 Curso: Breves Noções Sobre o Agronegócio.
 https://universidadeamaggi.com.br/lms/#/home
 
 Correr atras de certificados
 
-Add Facul Terça
+Valkaz Store New Management and Site:
+
+Orçamento Previsto: R$500,00
+Custo Domínio Personalizado: R$40,00 /ano
+Custo Caixa Principal: R$33,00 + frete = 20un
+Custo para Site Aberto NuvemShop: R$59,00 /mês
+Custo Previsto para 10 Camisetas: R$350,00 (R$35,00 /unidade)
+
+Soma: Aproximadamente R$482,00
+
+Lucro: Aproximadamente R$731,00
