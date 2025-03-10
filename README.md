@@ -34,3 +34,6 @@ Aplicativo "NFC Tools" para gravar algo.
 Criar uma experiência interativa para clientes. Por exemplo, ao aproximar o celular, ele pode ser redirecionado para um link com um desconto exclusivo ou informações sobre a peça de roupa.
 Aumentar seu engajamento nas redes sociais ou criar promoções.
 Personalização: Oferecer experiências personalizadas, como acesso a conteúdo exclusivo ou promoções.
+
+// Site Certificado:
+Pesquisas de usuarios cadastrados e os certificados que ele tem em upload.
