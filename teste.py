@@ -1,3 +1,13 @@
-lista = [11, 2, 33, 4, 3, 53, 6, 71, 84, 12, 35, 13, 64, 24, 75]
-lista.sort(reverse=True)
+import os
+
+os.system('cls')
+
+# print(list(range(10)))
+
+lista = [numero * 2 for numero in range(10)]
+
+# for numero in range(10):
+#     lista.append(numero)
+#     print(numero)
+
 print(lista)
