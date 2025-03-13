@@ -13,6 +13,9 @@
             background: linear-gradient(-45deg,#1C3D5A, #4682B4);
             background-size: cover;
             background-attachment: fixed;
+            color: white;
+            margin: 0;
+            padding: 0;
         }
 
         header{
@@ -30,17 +33,103 @@
             letter-spacing: 3px;
             opacity: 0.7;
         }
+
+        .content {
+            margin-top: 200px; /* Deixa espaço entre o header e o conteúdo */
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            width: 80%;
+            margin-left: 10%;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+        }
+
+        h2 {
+            text-align: center;
+            color: #fff;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+            text-align: center;
+        }
+
+        li {
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+
+        li span {
+            font-weight: bold;
+            color: #FFD700;
+        }
+
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Comandos Macbook.</h1>
-        <p>guia de comandos rápidos usando teclas do Macbook.</p>
+        <h1>Comandos Macbook</h1>
+        <p>Guia de comandos rápidos usando teclas do Macbook</p>
     </header>
 
     <div class="content">
-        <h1>Comandos:</h1>
+        <h2>Comandos Gerais</h2>
+        <ul>
+            <li><span>Copiar:</span> Command (⌘) + C</li>
+            <li><span>Colar:</span> Command (⌘) + V</li>
+            <li><span>Recortar:</span> Command (⌘) + X</li>
+            <li><span>Desfazer:</span> Command (⌘) + Z</li>
+            <li><span>Refazer:</span> Command (⌘) + Shift + Z</li>
+            <li><span>Selecionar tudo:</span> Command (⌘) + A</li>
+            <li><span>Salvar:</span> Command (⌘) + S</li>
+            <li><span>Imprimir:</span> Command (⌘) + P</li>
+            <li><span>Fechar janela:</span> Command (⌘) + W</li>
+            <li><span>Fechar aplicativo:</span> Command (⌘) + Q</li>
+        </ul>
+
+        <h2>Comandos de Navegação</h2>
+        <ul>
+            <li><span>Ir para a área de trabalho:</span> Command (⌘) + F3</li>
+            <li><span>Alternar entre janelas do mesmo app:</span> Command (⌘) + ~</li>
+            <li><span>Alternar entre apps abertos:</span> Command (⌘) + Tab</li>
+            <li><span>Mostrar ou ocultar o Launchpad:</span> F4 ou Command (⌘) + Space (para Spotlight)</li>
+            <li><span>Abrir Finder:</span> Command (⌘) + N (dentro do Finder)</li>
+        </ul>
+
+        <h2>Captura de Tela</h2>
+        <ul>
+            <li><span>Capturar toda a tela:</span> Command (⌘) + Shift + 3</li>
+            <li><span>Capturar uma área selecionada:</span> Command (⌘) + Shift + 4</li>
+            <li><span>Capturar uma janela específica:</span> Command (⌘) + Shift + 4 e depois pressione a barra de espaço</li>
+            <li><span>Capturar a Touch Bar (se houver):</span> Command (⌘) + Shift + 6</li>
+        </ul>
+
+        <h2>Comandos do Sistema</h2>
+        <ul>
+            <li><span>Mostrar/ocultar o Dock:</span> Command (⌘) + Option + D</li>
+            <li><span>Abrir as Preferências do Sistema:</span> Command (⌘) + Espaço e digitar "Preferências do Sistema"</li>
+            <li><span>Forçar encerramento de aplicativos:</span> Command (⌘) + Option + Esc</li>
+            <li><span>Bloquear a tela:</span> Command (⌘) + Control + Q</li>
+            <li><span>Desligar/reiniciar/suspender o Mac:</span> Control + Eject (ou Power Button)</li>
+        </ul>
+
+        <h2>Comandos com a Seta para Cima (↑)</h2>
+        <ul>
+            <li><span>Ir para o início do documento ou página:</span> Command (⌘) + seta para cima</li>
+            <li><span>Mostrar a linha de comando anterior no Terminal:</span> Seta para cima</li>
+            <li><span>Scroll para cima em uma página ou documento:</span> Seta para cima</li>
+            <li><span>Navegar entre pastas no Finder:</span> Command (⌘) + seta para cima</li>
+        </ul>
+
+        <h2>Comandos com o Símbolo `^` (Control)</h2>
+        <ul>
+            <li><span>Mover o cursor para o início da linha no Terminal:</span> Control + A</li>
+            <li><span>Mover o cursor para o final da linha no Terminal:</span> Control + E</li>
+            <li><span>Apagar uma palavra no Terminal:</span> Control + W</li>
+            <li><span>Limpar a tela do Terminal:</span> Control + L</li>
+        </ul>
     </div>
 </body>
 </html>
