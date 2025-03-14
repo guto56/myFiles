@@ -1,5 +1,10 @@
 import os
-os.system('clear')
+
+# Detectar o sistema operacional
+if os.name == 'nt':  # Windows
+    os.system('cls')
+else:  # Sistemas Unix (Linux/macOS)
+    os.system('clear')
 
 lista = [
     {'nome': 'Luiz', 'sobrenome': 'miranda'},
