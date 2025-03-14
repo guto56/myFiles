@@ -37,3 +37,33 @@ Personalização: Oferecer experiências personalizadas, como acesso a conteúdo
 
 // Site Certificado:
 Pesquisas de usuarios cadastrados e os certificados que ele tem em upload.
+
+hoje aprendi a fazer o sistema identificar se tô codando em
+Unix (Linux/Mac) ou em Nt (Windows), e é MUITO simples, tem
+apenas 5 linhas de código, e nenhuma linha é muito grande, é
+literalmente isso aqui:
+
+import os (essa linha importa o módulo do sistema, pra poder mexer no que quiser)
+
+if os.name == 'nt':
+    executa algo
+elif os.name == 'posix':
+    executa outra coisa
+
+* (os) chama o módulo importado
+* (name) é um parâmetro que estou indicando que o módulo busque
+* (==) define o valor do parâmetro
+* (if o que acabou de ser verificado) faz algo
+* (elif (define o contrário)) elif podia ser apenas: else: ação
+* else: executar outra coisa, mas usei o elif para você entender melhor
+* se fosse usar o else seria:
+
+if os.name == 'nt':
+    executa algo
+else:
+    executar outra coisa
+
+* porque usar dois iguais (==) ?
+    usar dois iguais compara se algo é algo
+    se usar apenas um igual (=) você estará definindo o valor de algo, como:
+    nome = 'lucas'
