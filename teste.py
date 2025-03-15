@@ -14,11 +14,19 @@ while True:
         adicionar = input('O que deseja adicionar? ')
         lista.append(adicionar)
     elif opc == 'r':
-        remover = input('Digite o índice que deseja remover: ')
         try:
-            
-        continue
+            if len(lista) < 1:
+                print('Nada para remover')
+                continue
+            remover = input('Digite o índice que deseja remover: ')
+            remover_i = int(remover)
+            del lista[remover_i]
+            print('Removido.')
+        except:
+            print('Erro')
     elif opc == 'l':
+        if len(lista) < 1:
+            print('Nada para listar.')
         for i, item in enumerate(lista):
             print(i, ':', item)
     else:
