@@ -2,7 +2,7 @@ import os
 
 if os.name == 'nt':
     os.system('cls')
-eelse:
+else:
     os.system('clear')
 
 lista = []
