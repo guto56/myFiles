@@ -1,5 +1,5 @@
 import os
-deu
+
 if os.name == 'nt':
     os.system('cls')
 else:
