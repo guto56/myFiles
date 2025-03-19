@@ -5,3 +5,10 @@ if os.name == 'nt':
 else:
     os.system('clear')  # Limpa a tela no Linux/Mac
 
+produto = {
+    'nome': 'Caneta Azul', 
+    'preço': 2.5,
+    'categoria': 'Escritório',
+}
+
+print(produto)
