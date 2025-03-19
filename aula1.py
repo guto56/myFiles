@@ -1,11 +1,6 @@
-#made by augusto.
-import os
+import aula1_m
 import sys
- 
 
-if os.name == 'nt':
-    os.system('cls')  # Limpa a tela no Windows
-else:
-    os.system('clear')  # Limpa a tela no Linux/Mac
+print('Mod: ', __name__) 
+print(*sys.path, sep='\n')
 
-print(* sys.path, sep='\n')
