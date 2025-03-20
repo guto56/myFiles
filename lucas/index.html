@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leitor de QR Code</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jsqr/dist/jsQR.js"></script>
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            background-color: rgb(67, 65, 65);
+        }
+
+        header{
+            text-align: center;
+            background-color: black;
+            color: white;
+            width: 100%;
+            padding: 20px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.9);
+        }
+
+        .insert-files{
+            margin-top: 200px;
+            text-align: center;
+        }
+
+        .generated-text{
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Leitor de QR Code</h1>
+        <p>insira um arquivo PDF e aguarde o texto desse aparecer na tela.</p>
+    </header>
+
+    <div class="insert-files">
+        <h1>Inserir: </h1>
+        <input type="file" id="fileInput" accept="image/*,application/pdf">
+    </div>
+
+    <hr style="margin-top: 50px;">
+
+    <div class="generated-text">
+        <h1>Gerado:</h1>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        // Função para processar o arquivo enviado
+        function processFile(file) {
+            const reader = new FileReader();
+
+            reader.onload = function(event) {
+                const fileType = file.type;
+                
+                // Verifica se o arquivo é uma imagem
+                if (fileType.startsWith('image/')) {
+                    const img = new Image();
+                    img.onload = function() {
+                        const canvas = document.createElement('canvas');
+                        const ctx = canvas.getContext('2d');
+                        canvas.width = img.width;
+                        canvas.height = img.height;
+                        ctx.drawImage(img, 0, 0);
+
+                        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+                        const code = jsQR(imageData.data, canvas.width, canvas.height);
+
+                        if (code) {
+                            document.getElementById('result').textContent = "Texto Encontrado: " + code.data;
+                        } else {
+                            document.getElementById('result').textContent = "Nenhum QR Code encontrado.";
+                        }
+                    };
+                    img.src = event.target.result;
+                } 
+                // Caso o arquivo seja um PDF
+                else if (fileType === 'application/pdf') {
+                    const pdfData = new Uint8Array(event.target.result);
+                    pdfjsLib.getDocument(pdfData).promise.then(function(pdf) {
+                        pdf.getPage(1).then(function(page) {
+                            const viewport = page.getViewport({ scale: 1 });
+                            const canvas = document.createElement('canvas');
+                            const ctx = canvas.getContext('2d');
+                            canvas.height = viewport.height;
+                            canvas.width = viewport.width;
+
+                            page.render({
+                                canvasContext: ctx,
+                                viewport: viewport
+                            }).promise.then(function() {
+                                const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+                                const code = jsQR(imageData.data, canvas.width, canvas.height);
+
+                                if (code) {
+                                    document.getElementById('result').textContent = "QR Code encontrado: " + code.data;
+                                } else {
+                                    document.getElementById('result').textContent = "Nenhum QR Code encontrado.";
+                                }
+                            });
+                        });
+                    });
+                }
+            };
+            
+            reader.readAsArrayBuffer(file);
+        }
+
+        // Detecta o arquivo quando o usuário faz o upload
+        document.getElementById('fileInput').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                document.getElementById('result').textContent = 'Processando o arquivo...';
+                processFile(file);
+            }
+        });
+    </script>
+</body>
+</html>
