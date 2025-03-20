@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <link rel="shortcut icon" href="./we:photos/we-fav-icon.png" type="image/x-icon">
@@ -22,13 +23,13 @@
         }
 
         h1 {
-            margin: 0; /* Remove margens do título principal */
-            color: white; /* Cor do título */
+            margin: 0;
+            color: white;
         }
 
         h2 {
-            margin: 0.5em 0; /* Margem do subtítulo */
-            color: #e0e0e0; /* Cor do subtítulo */
+            margin: 0.5em 0;
+            color: #e0e0e0;
         }
 
         #search {
@@ -49,8 +50,9 @@
         main {
             width: 80%;
             margin: 1em auto;
-            columns: 200px; /* Para layout em colunas */
-            column-gap: 10px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
         }
 
         img {
@@ -67,25 +69,29 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.9);
         }
 
-        /* Media Query para telas menores */
+        /* Media Queries para diferentes resoluções */
+
+        /* Para telas menores que 600px (celulares) */
         @media (max-width: 600px) {
             main {
-                columns: 3; /* Exibir 3 imagens por vez em telas pequenas */
+                grid-template-columns: repeat(2, 1fr); /* 2 imagens por linha em celulares */
+            }
+
+            #search{
+                width: 35%;
             }
         }
+
     </style>
 </head>
 <body>
     <header>
-        <h1>Just We. 💝</h1> <!-- Título adicionado -->
+        <h1>Just We. 💝</h1>
         <input type="text" id="search" placeholder="Buscar imagens...">
-        <p>ela carro olhos we abraçado abraço janta comida carro corrida mão</p>
+        <p>carro olhos we abraçado abraço janta comida carro corrida mão</p>
     </header>
 
     <main>
-        <!--<img id="id para pesquisar" src="inserir imagem">-->
-        <img id="ela olhos" src="./we:photos/15d5fd8b-c034-41a0-ad45-54703e92b462.jpg">
-        <img id="ela" src="./we:photos/2ff2524f-d22e-40f4-b49f-6c79a36a8e2a.jpg">
         <img id="we abraçado" src="./we:photos/71ef3379-d624-4272-b460-4df7f5825143.jpg">
         <img id="carro corrida" src="./we:photos/86e94faa-da0c-43e4-8814-428e654d94b5.jpg">
         <img id="we" src="./we:photos/bb957489-80d3-4e2b-bdc5-e6dd4f9416b8.jpg">
