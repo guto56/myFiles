@@ -6,4 +6,7 @@ if os.name == 'nt':
 else:
     os.system('clear')  # Limpa a tela no Linux/Mac
 
-print('Terminal foi limpo.')
+teste = 'teste com sucesso.'
+
+def soma(x, y):
+    return x + y
