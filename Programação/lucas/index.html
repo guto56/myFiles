@@ -7,15 +7,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jsqr/dist/jsQR.js"></script>
     <style>
-        *{
+        * {
             font-family: Arial, Helvetica, sans-serif;
         }
 
-        body{
+        body {
             background-color: rgb(67, 65, 65);
         }
 
-        header{
+        header {
             text-align: center;
             background-color: black;
             color: white;
@@ -27,17 +27,17 @@
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.9);
         }
 
-        header p{
+        header p {
             letter-spacing: 3px;
             opacity: 0.6;
         }
 
-        .insert-files{
+        .insert-files {
             margin-top: 200px;
             text-align: center;
         }
 
-        .generated-text{
+        .generated-text {
             text-align: center;
             margin-top: 20px;
         }
@@ -46,7 +46,7 @@
 <body>
     <header>
         <h1>Leitor de QR Code</h1>
-        <p>insira um arquivo PDF e aguarde o texto desse aparecer na tela.</p>
+        <p>Insira um arquivo PDF ou imagem e aguarde o texto aparecer na tela.</p>
     </header>
 
     <div class="insert-files">
@@ -62,22 +62,33 @@
     </div>
 
     <script>
-        // Função para processar o arquivo enviado
-        function processFile(file) {
+        // Função para processar o arquivo de imagem
+        function processImageFile(file) {
             const reader = new FileReader();
 
             reader.onload = function(event) {
                 const fileType = file.type;
-                
-                // Verifica se o arquivo é uma imagem
+
                 if (fileType.startsWith('image/')) {
                     const img = new Image();
+
                     img.onload = function() {
+                        const maxWidth = 800;
+                        const maxHeight = 600;
+                        let width = img.width;
+                        let height = img.height;
+
+                        if (width > maxWidth || height > maxHeight) {
+                            const ratio = Math.min(maxWidth / width, maxHeight / height);
+                            width = Math.floor(width * ratio);
+                            height = Math.floor(height * ratio);
+                        }
+
                         const canvas = document.createElement('canvas');
                         const ctx = canvas.getContext('2d');
-                        canvas.width = img.width;
-                        canvas.height = img.height;
-                        ctx.drawImage(img, 0, 0);
+                        canvas.width = width;
+                        canvas.height = height;
+                        ctx.drawImage(img, 0, 0, width, height);
 
                         const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
                         const code = jsQR(imageData.data, canvas.width, canvas.height);
@@ -88,37 +99,53 @@
                             document.getElementById('result').textContent = "Nenhum QR Code encontrado.";
                         }
                     };
+
+                    img.onerror = function() {
+                        document.getElementById('result').textContent = "Erro ao carregar a imagem.";
+                    };
+
                     img.src = event.target.result;
-                } 
-                // Caso o arquivo seja um PDF
-                else if (fileType === 'application/pdf') {
-                    const pdfData = new Uint8Array(event.target.result);
-                    pdfjsLib.getDocument(pdfData).promise.then(function(pdf) {
-                        pdf.getPage(1).then(function(page) {
-                            const viewport = page.getViewport({ scale: 1 });
-                            const canvas = document.createElement('canvas');
-                            const ctx = canvas.getContext('2d');
-                            canvas.height = viewport.height;
-                            canvas.width = viewport.width;
-
-                            page.render({
-                                canvasContext: ctx,
-                                viewport: viewport
-                            }).promise.then(function() {
-                                const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-                                const code = jsQR(imageData.data, canvas.width, canvas.height);
-
-                                if (code) {
-                                    document.getElementById('result').textContent = "QR Code encontrado: " + code.data;
-                                } else {
-                                    document.getElementById('result').textContent = "Nenhum QR Code encontrado.";
-                                }
-                            });
-                        });
-                    });
                 }
             };
-            
+
+            reader.readAsDataURL(file);
+        }
+
+        // Função para processar o arquivo PDF
+        function processPdfFile(file) {
+            const reader = new FileReader();
+
+            reader.onload = function(event) {
+                const pdfData = new Uint8Array(event.target.result);
+
+                pdfjsLib.getDocument(pdfData).promise.then(function(pdf) {
+                    // Vamos pegar a primeira página (ou pode adicionar lógica para pegar mais)
+                    pdf.getPage(1).then(function(page) {
+                        const viewport = page.getViewport({ scale: 1 });
+                        const canvas = document.createElement('canvas');
+                        const ctx = canvas.getContext('2d');
+                        canvas.height = viewport.height;
+                        canvas.width = viewport.width;
+
+                        page.render({
+                            canvasContext: ctx,
+                            viewport: viewport
+                        }).promise.then(function() {
+                            const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+                            const code = jsQR(imageData.data, canvas.width, canvas.height);
+
+                            if (code) {
+                                document.getElementById('result').textContent = "QR Code encontrado: " + code.data;
+                            } else {
+                                document.getElementById('result').textContent = "Nenhum QR Code encontrado no PDF.";
+                            }
+                        });
+                    });
+                }).catch(function(error) {
+                    document.getElementById('result').textContent = "Erro ao processar o PDF.";
+                });
+            };
+
             reader.readAsArrayBuffer(file);
         }
 
@@ -127,7 +154,15 @@
             const file = event.target.files[0];
             if (file) {
                 document.getElementById('result').textContent = 'Processando o arquivo...';
-                processFile(file);
+
+                // Verifica o tipo de arquivo
+                if (file.type.startsWith('image/')) {
+                    processImageFile(file);
+                } else if (file.type === 'application/pdf') {
+                    processPdfFile(file);
+                } else {
+                    document.getElementById('result').textContent = "Formato de arquivo não suportado.";
+                }
             }
         });
     </script>

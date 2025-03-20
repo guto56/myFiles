@@ -1,26 +1,12 @@
-from dados import produtos
-from dados import __init__
-import copy
+def soma(x, y):
+    return x + y
 
-novos_produtos = [
-    {**p, 'preco': round(p['preco'] * 1.1, 2)}
-    for p in copy.deepcopy(produtos)
-]
+def multiplicacao(x, y):
+    return x * y
 
-produtos_ordem_crescente =sorted(
-    copy.deepcopy(produtos),
-    key=lambda p:p['nome']
-           )
+def executa(funcao, *args):
+    return funcao(*args)
 
-produtos_ordem_decrescente = sorted(
-    copy.deepcopy(produtos),
-    key=lambda p:p['nome'], reverse=True
-    )
+soma_com_cinco = executa(soma, 5)
 
-print(*produtos_ordem_crescente, sep='\n')
-print()
-print(*produtos_ordem_decrescente, sep='\n')
-
-# print(*produtos, sep='\n')
-# print()
-# print(*novos_produtos, sep='\n')
+multiplica_por_dez = executa(multiplicacao, 10)
