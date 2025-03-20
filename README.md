@@ -37,3 +37,5 @@ Personalização: Oferecer experiências personalizadas, como acesso a conteúdo
 
 // Site Certificado:
 Pesquisas de usuarios cadastrados e os certificados que ele tem em upload.
+
+//Ideia site We: mais de uma forma de pesquisar, como?
