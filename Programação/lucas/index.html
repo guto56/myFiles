@@ -13,6 +13,11 @@
 
         body {
             background-color: rgb(67, 65, 65);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            flex-direction: column;
         }
 
         header {
@@ -21,9 +26,6 @@
             color: white;
             width: 100%;
             padding: 20px;
-            position: absolute;
-            left: 0;
-            top: 0;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.9);
         }
 
@@ -33,13 +35,39 @@
         }
 
         .insert-files {
-            margin-top: 200px;
+            margin-top: 20px;
             text-align: center;
         }
 
         .generated-text {
             text-align: center;
             margin-top: 20px;
+        }
+
+        #result {
+            margin-top: 20px;
+            background-color: rgb(91, 88, 88, 0.3);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            width: 80%; /* Ajustar a largura para 80% */
+            max-width: 600px; /* Limitar o tamanho máximo */
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Garantir que o input e a área de texto se ajustem bem em telas pequenas */
+        @media (max-width: 600px) {
+            #result {
+                width: 90%; /* Maior largura para telas pequenas */
+            }
+
+            header h1 {
+                font-size: 1.5rem; /* Ajustar o tamanho do título */
+            }
+
+            .insert-files input {
+                width: 100%; /* Deixar o input ocupar toda a largura */
+            }
         }
     </style>
 </head>
@@ -58,7 +86,7 @@
 
     <div class="generated-text">
         <h1>Gerado:</h1>
-        <p id="result"></p>
+        <p id="result">reetet</p>
     </div>
 
     <script>
@@ -94,7 +122,8 @@
                         const code = jsQR(imageData.data, canvas.width, canvas.height);
 
                         if (code) {
-                            document.getElementById('result').textContent = "Texto Encontrado: " + code.data;
+                            document.getElementById('result').innerHTML = "Texto Encontrado:<br>" + code.data;
+
                         } else {
                             document.getElementById('result').textContent = "Nenhum QR Code encontrado.";
                         }
@@ -135,7 +164,8 @@
                             const code = jsQR(imageData.data, canvas.width, canvas.height);
 
                             if (code) {
-                                document.getElementById('result').textContent = "QR Code encontrado: " + code.data;
+                                document.getElementById('result').innerHTML = "QR Code encontrado:<br>" + code.data;
+
                             } else {
                                 document.getElementById('result').textContent = "Nenhum QR Code encontrado no PDF.";
                             }
