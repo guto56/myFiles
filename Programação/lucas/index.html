@@ -59,6 +59,22 @@
             min-height: 100px; /* Definir uma altura mínima para o #result */
         }
 
+        .copy-button {
+            margin-top: 20px;
+            background-color: rgb(0, 123, 255);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .copy-button:hover {
+            background-color: rgb(0, 105, 217);
+        }
+
         /* Garantir que o input e a área de texto se ajustem bem em telas pequenas */
         @media (max-width: 600px) {
             #result {
@@ -93,6 +109,9 @@
         <p id="result"></p>
     </div>
 
+    <!-- Botão para copiar o conteúdo -->
+    <button class="copy-button" id="copyButton">Copiar Texto</button>
+
     <script>
         // Função para processar o arquivo de imagem
         function processImageFile(file) {
@@ -126,7 +145,7 @@
                         const code = jsQR(imageData.data, canvas.width, canvas.height);
 
                         if (code) {
-                            document.getElementById('result').innerHTML = "Texto Encontrado:<br>" + code.data;
+                            document.getElementById('result').innerHTML = "<br>" + code.data;
 
                         } else {
                             document.getElementById('result').textContent = "Nenhum QR Code encontrado.";
@@ -168,7 +187,7 @@
                             const code = jsQR(imageData.data, canvas.width, canvas.height);
 
                             if (code) {
-                                document.getElementById('result').innerHTML = "QR Code encontrado:<br>" + code.data;
+                                document.getElementById('result').innerHTML = "<br>" + code.data;
 
                             } else {
                                 document.getElementById('result').textContent = "Nenhum QR Code encontrado no PDF.";
@@ -197,6 +216,21 @@
                 } else {
                     document.getElementById('result').textContent = "Formato de arquivo não suportado.";
                 }
+            }
+        });
+
+        // Função para copiar o conteúdo de #result para a área de transferência
+        document.getElementById('copyButton').addEventListener('click', function() {
+            const resultText = document.getElementById('result').innerText;
+
+            if (resultText) {
+                navigator.clipboard.writeText(resultText).then(function() {
+                    alert('Texto copiado para a área de transferência!');
+                }).catch(function(err) {
+                    alert('Erro ao copiar o texto: ' + err);
+                });
+            } else {
+                alert('Não há texto para copiar.');
             }
         });
     </script>
